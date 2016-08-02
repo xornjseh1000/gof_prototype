@@ -6,13 +6,6 @@
 	<title>Browse</title>
 </head>
 <body>
-
-
-		
-	<a href="${context}/account.do?page=account">계정으로</a> 
-
-	<a href="${context}/account.do?page=browse_main">로그인 메인으로</a> 
-
-aa
+	<a href="browse_main.jsp">Browse 메인으로</a> 
 </body>
 </html>
