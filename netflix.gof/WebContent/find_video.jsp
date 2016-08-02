@@ -12,9 +12,9 @@
 	</h5>
 		<table id="find_video">
 		<tr>
-			<td ><a href="video_play.jsp"><img src="matrix.jpg" alt="매트릭스" style="width:240px;height:150px;"></a></td>
-			<td ><a href="video_play.jsp"><img src="matrix2.jpg" alt="매트릭스2" style="width:240px;height:150px;"></a></td>
-			<td ><a href="video_play.jsp"><img src="matrix3.jpg" alt="매트릭스3" style="width:240px;height:150px;"></a></td>
+			<td ><a href="video_detal.jsp"><img src="matrix.jpg" alt="매트릭스" style="width:240px;height:150px;"></a></td>
+			<td ><a href="video_detal.jsp"><img src="matrix2.jpg" alt="매트릭스2" style="width:240px;height:150px;"></a></td>
+			<td ><a href="video_detal.jsp"><img src="matrix3.jpg" alt="매트릭스3" style="width:240px;height:150px;"></a></td>
 		</tr>
 		</table>
 	</div>	
