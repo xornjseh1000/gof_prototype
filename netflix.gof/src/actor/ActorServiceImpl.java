@@ -48,7 +48,7 @@ public class ActorServiceImpl implements ActorService{
 	@Override
 	public int delete(ActorBean acBean) {
 		int result = 0;
-		result = actDAO.delete(actorNo);
+		result = actDAO.delete(acBean);
 		return result;
 	}
 }
