@@ -31,13 +31,23 @@ public class MemberController extends HttpServlet {
 			System.out.println("browse_main");
 			DispatcherServlet.send(request,response,Separator.command);			
 			break;
-		case "select_film":
+		case "select_filme":
 			Separator.command.setPage(Separator.command.getAction());
 			Separator.command.setView();
 			DispatcherServlet.send(request,response,Separator.command);				
 			break;
 		case "payment":
 			Separator.command.setPage(Separator.command.getAction());
+			Separator.command.setView();
+			DispatcherServlet.send(request,response,Separator.command);			
+			break;
+		case "regist_complete":
+			Separator.command.setPage("main_before");
+			Separator.command.setView();
+			DispatcherServlet.send(request,response,Separator.command);			
+			break;
+		case "login":
+			Separator.command.setPage("browse_main");
 			Separator.command.setView();
 			DispatcherServlet.send(request,response,Separator.command);			
 			break;

@@ -17,7 +17,7 @@ h1 {text-align:center;table-layout:center }
 
 <span style="color: red; font-size: 30px" >NETFLIX</span>
 
-<form action="action_page.php">
+<form action="${context}/member.do" method="get">
 <br />
 <br />
 
@@ -42,11 +42,10 @@ h1 {text-align:center;table-layout:center }
     <div class="container" style="background-color:#f1f1f1">
   </div>
         <br />
-    <button type="&nbsp  submit  &nbsp;">&nbsp;로그인&nbsp;</button>
+  		<input type="hidden" name = "action" value="login"/>
+		 <input type="submit" value="로그인"/><br/>
     <br />
     <br />
-     <button type="Facebook으로 로그인">Facebook으로 로그인</button>
-  
   </div>
 
  

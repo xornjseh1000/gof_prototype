@@ -32,6 +32,6 @@
     </jsp-property-group>
   </jsp-config>
   <welcome-file-list>
-    <welcome-file>main_before.jsp</welcome-file>
+    <welcome-file>/WEB-INF/member/main_before.jsp</welcome-file>
   </welcome-file-list>
 </web-app>

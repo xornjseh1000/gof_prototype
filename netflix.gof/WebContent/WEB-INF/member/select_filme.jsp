@@ -15,27 +15,26 @@
 	
 	<span>선호하시는 영화나TV프로그램을 3개선택하세요</span>
 		<br /><br />
-  	
-				<button type="button" color="red" font-size=30px;
-
-			onclick="alert(완료')">완료</button>
+		<form action="${context}/member.do" method="get">
+				<input type="hidden" name = "action" value="regist_complete"/>
+		  		<input type="submit" value="등록"/><br/>
 	<table>
 		<tr>
-			<td ><img src="../img/seven_room.jpg" alt="seven_room" width="200" height="100"></td>
-			<td><img src="../img/jasonbon.jpg" alt="jasonbon" width="200" height="100"></td>
-			<td><img src="../img/doduk.jpg" alt="" width="200" height="100"></td>
-			<td><img src="../img/pusan.jpg" alt="" width="200" height="100"></td>
-			<td><img src="../img/spider.jpg" alt="" width="200" height="100"></td>
+			<td ><img src="${img}/seven_room.jpg" alt="seven_room" width="200" height="100"></td>
+			<td><img src="${img}/jasonbon.jpg" alt="jasonbon" width="200" height="100"></td>
+			<td><img src="${img}/doduk.jpg" alt="" width="200" height="100"></td>
+			<td><img src="${img}/pusan.jpg" alt="" width="200" height="100"></td>
+			<td><img src="${img}/spider.jpg" alt="" width="200" height="100"></td>
 		</tr>
 		<tr>
-			<td><img src="../img/dory.jpg" alt="" width="200" height="100"></td>
-			<td><img src="../img/demolition.jpg" alt="" width="200" height="100"></td>
-			<td><img src="../img/mypet.jpg" alt="" width="200" height="100"></td>
-			<td><img src="../img/under_water.jpg" alt="" width="200" height="100"></td>
-			<td><img src="../img/big.jpg" alt="" width="200" height="100"></td>
+			<td><img src="${img}/dory.jpg" alt="" width="200" height="100"></td>
+			<td><img src="${img}/demolition.jpg" alt="" width="200" height="100"></td>
+			<td><img src="${img}/mypet.jpg" alt="" width="200" height="100"></td>
+			<td><img src="${img}/under_water.jpg" alt="" width="200" height="100"></td>
+			<td><img src="${img}/big.jpg" alt="" width="200" height="100"></td>
 		</tr>
 	</table>
-	
+	</form>
 
 </body>
 </html>

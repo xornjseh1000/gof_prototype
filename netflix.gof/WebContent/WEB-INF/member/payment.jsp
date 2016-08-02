@@ -164,7 +164,7 @@
 				onclick="alert('click event occured')"> 개인정보결제서비스업체제공동의 &nbsp;&nbsp;&nbsp;결제서비스업체
 				<br /><br /><br />
 			
-					<input type="hidden" name = "action" value="select_film"/>
+					<input type="hidden" name = "action" value="select_filme"/>
 		  		<input type="submit" value="멤버쉽시작"/>
 				
 	</form>
