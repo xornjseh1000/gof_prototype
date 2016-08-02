@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<link rel="stylesheet" href="login.css" />
-<link rel="stylesheet" href="login_table.css" />
+<link rel="stylesheet" href="${css}/login.css" />
+<link rel="stylesheet" href="${css}/login_table.css" />
 <jsp:include page="../global/login_top.jsp" />
 <jsp:include page="../global/login_header.jsp" /> 
 <div class="box">
