@@ -40,7 +40,7 @@
  	
 
 	<body>
-	<form action="demo_form.asp">
+	<form action="${context}/member.do" method="get">
 		<input type="text" name="카드번호" value="카드번호">
 			&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;
 			&nbsp;&nbsp;&nbsp;
@@ -64,13 +64,13 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;
 			&nbsp;&nbsp;&nbsp;
 			&nbsp;&nbsp;
-<select <option value="유효기간(년)">유효기간(년)</option>
+<select> <option value="유효기간(년)">유효기간(년)</option>
 	<option value="유효기간(년)">유효기간(년)</option>		
   <option value="2020">2020</option>
   <option value="2019">2019</option>
   <option value="2018">2018</option>
    <option value="2017">2017</option>
-   >
+   
   
 </select><br> 
 
@@ -163,11 +163,9 @@
 				<input type="checkbox" id="myCheck" onmouseover="myFunction()"
 				onclick="alert('click event occured')"> 개인정보결제서비스업체제공동의 &nbsp;&nbsp;&nbsp;결제서비스업체
 				<br /><br /><br />
-				
-				<button type="button" color="red" font-size=30px;
 			
-			onclick="alert('멤버십시작')">멤버십시작</button>
-		<p align="left"></p>
+					<input type="hidden" name = "action" value="select_film"/>
+		  		<input type="submit" value="멤버쉽시작"/>
 				
 	</form>
 

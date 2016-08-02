@@ -31,6 +31,16 @@ public class MemberController extends HttpServlet {
 			System.out.println("browse_main");
 			DispatcherServlet.send(request,response,Separator.command);			
 			break;
+		case "select_film":
+			Separator.command.setPage(Separator.command.getAction());
+			Separator.command.setView();
+			DispatcherServlet.send(request,response,Separator.command);				
+			break;
+		case "payment":
+			Separator.command.setPage(Separator.command.getAction());
+			Separator.command.setView();
+			DispatcherServlet.send(request,response,Separator.command);			
+			break;
 		default:
 			break;
 		}

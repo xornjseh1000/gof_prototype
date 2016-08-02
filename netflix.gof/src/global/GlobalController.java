@@ -18,10 +18,10 @@ public class GlobalController extends HttpServlet {
 		Separator.init(request, response);
 		HttpSession session = request.getSession();
 		switch (Separator.command.getAction()) {
-		case "move":
-			
+		case "move":			
 			DispatcherServlet.send(request,response,Separator.command);			
 			break;
+
 		case "browse_main":
 			DispatcherServlet.send(request,response,Separator.command);			
 			break;

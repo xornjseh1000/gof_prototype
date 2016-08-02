@@ -36,7 +36,7 @@ h { font-size=30px
 	<br />
 	<br />
 	
-	<form action="">
+	<form action="${context}/member.do" method="get">
 		email<br> <input type="text" name="userid">
 		<span>#이미 등록된 이메일입니다</span>
 		
@@ -45,13 +45,11 @@ h { font-size=30px
 
 		
 			<input type="checkbox" id="myCheck" onmouseover="myFunction()"
-				onclick="alert('click event occured')"> email 수신여부
+				onclick="alert('click event occured')"> email 수신여부 </br/>
+		<input type="hidden" name = "directory" value="global"/>
+		<input type="hidden" name = "action" value="payment"/>
+		<input type="submit" value="등록"/>	
 		</form>
 	
-		<br />
-
-		<button type="button" color="red" font-size=30px;
-			onclick="alert('등록')">등록</button>
-		<p align="left"></p>
 </body>
 </html>
