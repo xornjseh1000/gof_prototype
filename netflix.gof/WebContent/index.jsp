@@ -6,7 +6,6 @@
 	<title>Browse</title>
 </head>
 <body>
-aa
 
 		
 	<a href="${context}/account.do?page=account">계정으로</a> 
