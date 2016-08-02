@@ -6,15 +6,13 @@
 	<title>Browse</title>
 </head>
 <body>
-<<<<<<< HEAD
+
 
 		
 	<a href="${context}/account.do?page=account">계정으로</a> 
 
 	<a href="${context}/account.do?page=browse_main">로그인 메인으로</a> 
 
-=======
-	aa
->>>>>>> refs/remotes/master/hyunwoo
+aa
 </body>
 </html>
