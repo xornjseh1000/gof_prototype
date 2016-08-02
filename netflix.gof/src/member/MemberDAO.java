@@ -68,12 +68,13 @@ public class MemberDAO {
 
 	public int insert(MemberBean memBean) {
 		int result = 0;
-		String sql = "insert into member(email, password, email_sv)"+" values (?,?,?)";
+		String sql = "insert into member(email, password, email_sv,prof_img,reg_date)"+" values (?,?,?,?,sysdate)";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, memBean.getEmail());
 			pstmt.setString(2, memBean.getPassword());
 			pstmt.setString(3, memBean.isRcvEmail()==true?"Y":"N");
+			pstmt.setString(4, memBean.getProfImg());
 			result = pstmt.executeUpdate();
 			System.out.println("DAO Insert Result: (1 if success)"+result);
 		} catch (Exception e) {
@@ -228,6 +229,23 @@ public class MemberDAO {
 			pstmt.setString(2, email);
 			result = pstmt.executeUpdate();
 		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+
+	public String selectFav(String email) { // 사용자가 첨에 3개 선택한거로 추천영상 뽑아내기 위한 놈
+		String result = "";
+		String sql = "SELECT FAV FROM MEMBER WHERE EMAIL=?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, email);
+			rs = pstmt.executeQuery();
+			if(rs.next()){
+				result = rs.getString("FAV");
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return result;

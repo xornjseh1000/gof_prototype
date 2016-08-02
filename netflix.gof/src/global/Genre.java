@@ -8,5 +8,5 @@ package global;
 */
 
 public enum Genre {
-	TV_PROGRAM,MOVIE,DRAMA,DOCUMENTARY;
+	ACTION,COMEDY,MELO,THRILLER,HORROR,SF;
 }

@@ -5,7 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import global.Constants;
 import global.DBFactory;
@@ -158,6 +160,30 @@ public class PaymentDAO {
 			e.printStackTrace();
 		}
 		return tempList;
+	}
+
+	public Map<Integer, PaymentBean> selectMap() {
+		Map<Integer, PaymentBean> map = new HashMap<Integer,PaymentBean>();
+		String sql = "SELECT * FROM PAYMENT";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while(rs.next()){
+				PaymentBean pBean = new PaymentBean();
+				pBean.setPaySeq(rs.getInt("PAY_SEQ"));
+				pBean.setCardNum(rs.getString("CARD_NUM"));
+				pBean.setCompany(rs.getString("COMPANY"));
+				pBean.setPrice(rs.getInt("PRICE"));
+				pBean.setPayDate(rs.getString("PAY_DATE"));
+				pBean.setExpireDate(rs.getString("EXPIRE_DATE"));
+				map.put(pBean.getPaySeq(), pBean);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return map;
 	}
 	
 }

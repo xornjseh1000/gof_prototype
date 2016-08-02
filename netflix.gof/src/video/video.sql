@@ -218,8 +218,32 @@ create table bookmark(
 	constraint FK_BOOKMARK_SERIAL_NO foreign key(serial_no)
 	references video(serial_no) on delete cascade
 )
+select * from video;
+delete  from video;
 
-
-
-select * from video join producing using(serial_no) join category_video using(serial_no)
+create view video_detail
+as
+select SERIAL_NO,TITLE,SUB_TITLE,CREATE_YEAR,RUNNING_TIME,FILE_URL,LANGUAGE,REG_DATE,POSTER,SYNOPS,PRODUCER_NO,CATEGORY,GENRE,GROUP_NO,GRADE,SEASON,EPISODE from video join producing using(serial_no) join category_video using(serial_no)
 join genre_video using(serial_no) join group_no using(serial_no) join grade_video using(serial_no) left outer join series using(serial_no)
+
+
+drop view video_detail;
+
+select * from video_detail;
+
+
+select * from member;
+delete from member;
+
+insert into bookmark values('2hwooo@naver.com',1010);
+
+select * from bookmark;
+
+insert into stats values('2hwooo@naver.com',1011,sysdate);
+
+SELECT SERIAL_NO FROM (
+SELECT SERIAL_NO, CNT, RANK() OVER(ORDER BY CNT DESC) AS RK FROM (SELECT SERIAL_NO,COUNT(*) CNT FROM STATS GROUP BY SERIAL_NO))
+WHERE RK < 10;
+
+
+select * from video_detail where genre=5 OR genre=0 or genre = 3;
