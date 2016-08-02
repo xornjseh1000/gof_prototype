@@ -21,17 +21,15 @@ h { font-size=30px
 </head>
 <body>
 	
-	<span  style="color: red; font-size: 30px;text-align: =left">NETFLIX</span>
-
-
-	<span  style="color: red; font-size: 20px; text-align:=right ">로그인</span>
+	<span style="color: red; float:left; font-size: 40px" >NETFLIX</span>
+	<span  style="color:black;float:right;  font-size:20px;text-align: =right" >로그인</span>
 
 
 </head>
 <p></p>
 <p></p>
 
-	<h2 text-align:=left>계정등록</h2>
+	<h2 style="text-align:left;">계정등록</h2>
 
 	<br />
 	<br />

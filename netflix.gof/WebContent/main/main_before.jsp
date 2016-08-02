@@ -14,12 +14,8 @@
 	</style>
 	</head>
 	<body>
-<span style="color: red; font-size: 30px" >NETFLIX</span>
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-<span  style="color:white;font-size:20px;text-align: =right" >회원가입</span>
+<span style="color: red; float:left; font-size: 40px" >NETFLIX</span>
+	<span  style="color:black;float:right;  font-size:20px;text-align: =right" >회원가입</span>
 
 
 <br /><br /><br /><br /><br /><br /><br /><br />
