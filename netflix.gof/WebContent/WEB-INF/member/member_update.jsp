@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="login.css" />
 <link rel="stylesheet" href="login_table.css" />
-<jsp:include page="login_top.jsp" />
-<jsp:include page="login_header.jsp" /> 
+<jsp:include page="../global/login_top.jsp" />
+<jsp:include page="../global/login_header.jsp" /> 
 <div class="box">
 		<h2>회원정보수정 </h2>
 		<table id="member_update">
@@ -35,5 +35,5 @@
 		<tr>
 		</table>
 	</div>
-<jsp:include page="login_footer.jsp" />
-<jsp:include page="login_end.jsp" /> 
+<jsp:include page="../global/login_footer.jsp" />
+<jsp:include page="../global/login_end.jsp" /> 
