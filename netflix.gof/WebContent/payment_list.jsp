@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<link rel="stylesheet" href="login.css" />
-<link rel="stylesheet" href="login_table.css" />
-<jsp:include page="login_top.jsp" />
-<jsp:include page="login_header.jsp" /> 
+<link rel="stylesheet" href="browse.css" />
+<link rel="stylesheet" href="browse_table.css" />
+<jsp:include page="browse_top.jsp" />
+<jsp:include page="browse_header.jsp" /> 
 <div class="box">
 	<h2>결제상세정보</h2>
 	<table id="member_list">
@@ -26,5 +26,5 @@
 </table>
 <input type="submit" onclick=" location='account.jsp'" value="확인" />
 </div>		
-<jsp:include page="login_footer.jsp" />
-<jsp:include page="login_end.jsp" /> 
+<jsp:include page="account_footer.jsp" />
+<jsp:include page="browse_end.jsp" /> 

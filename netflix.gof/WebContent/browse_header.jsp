@@ -9,12 +9,13 @@
      <option value="pop_video.jsp">인기 동영상</option>
 	</select>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
 		&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-		<input type="submit" value="검색" />
+		<input type="text" name="keyword" placeholder="제목,사람,장르"/>
+		<input type="submit" onclick=" location='find_video.jsp'" value="찾기" />
 	<select name="profile" onchange="location = this.value;">
 		<option value="">홍길동</option>
      	<option value="account.jsp">계 정</option>
      	<option value="customer.jsp">고객센터</option>
-     	<option value="login.jsp">GoF에서 로그아웃</option>
+     	<option value="logout.jsp">GoF에서 로그아웃</option>
     </select>	
 	</h3> 
 		

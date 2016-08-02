@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<link rel="stylesheet" href="login.css" />
-<link rel="stylesheet" href="login_table.css" />
-<jsp:include page="login_top.jsp" />
-<jsp:include page="login_header.jsp" /> 
+<link rel="stylesheet" href="browse.css" />
+<link rel="stylesheet" href="browse_table.css" />
+<jsp:include page="browse_top.jsp" />
+<jsp:include page="browse_header.jsp" /> 
 <div class="box">
 		<h3>신규 동영상 </h3>
 		<table id="new_video">
@@ -16,4 +16,4 @@
 		</table>
 	</div>	
 <jsp:include page="browse_footer.jsp" />
-<jsp:include page="login_end.jsp" /> 
+<jsp:include page="browse_end.jsp" /> 
