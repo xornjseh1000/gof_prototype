@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="browse_table.css" />
 <jsp:include page="../global/browse_top.jsp" />
 <div id="header">
-	<h3><a href="index.jsp" style="color:red;">GoF </a>&nbsp; &nbsp;
+	<h3><a href="index.jsp" style="color:red;">Netflix </a>&nbsp; &nbsp;
 	    &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
 		&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
 		&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
@@ -12,7 +12,7 @@
 		&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
 		&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
 		&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-		<input type="submit" onclick=" location='index.jsp'" value="로그인" />
+		<input type="submit" onclick=" location='${context}/member.do?page=mainbefore'" value="로그인" />
 	</h3>
 </div>	 
 	<div style="background-color:#ffffff;

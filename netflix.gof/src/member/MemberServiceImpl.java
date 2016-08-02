@@ -65,6 +65,7 @@ public class MemberServiceImpl implements MemberService {
 			System.out.println("Login success from DAO");
 		} else {
 			System.out.println("Login failed from DAO");
+			loginBean.setEmail("fail");
 		}
 		return loginBean;
 	}

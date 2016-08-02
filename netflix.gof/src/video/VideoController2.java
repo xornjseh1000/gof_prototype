@@ -1,4 +1,4 @@
-package member;
+package video;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,24 +7,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.swing.JOptionPane;
 
 import global.DispatcherServlet;
 import global.Separator;
 
 /**
- * Servlet implementation class MemberController
+ * Servlet implementation class VideoController2
  */
-@WebServlet("/member.do")
-public class MemberController extends HttpServlet {
+@WebServlet("/video.do")
+public class VideoController2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Separator.init(request, response);
 		HttpSession session = request.getSession();
-		MemberService service = MemberServiceImpl.getInstance();
-		MemberBean bean = new MemberBean();
 		switch (Separator.command.getAction()) {
 		case "move":
 			Separator.command.setDirectory("member");	
@@ -53,24 +50,12 @@ public class MemberController extends HttpServlet {
 			Separator.command.setPage("browse_main");
 			Separator.command.setView();
 			DispatcherServlet.send(request,response,Separator.command);			
-			
-			session = request.getSession();
-			bean = service.login(request.getParameter("email"), request.getParameter("pw"));
-			if(bean.getEmail().equals("fail")){
-				System.out.println("fail");
-				Separator.command.setPage("login");
-			}else{
-			session.setAttribute("user", bean);
-			Separator.command.setPage("browse_main");
-			
-			}
-			Separator.command.setView();
-			request.setAttribute("result", bean.getEmail().equals("fail")?"로그인실패":"");
 			break;
 		default:
 			break;
 		}
 		DispatcherServlet.send(request,response,Separator.command);			
 	}
+
 
 }

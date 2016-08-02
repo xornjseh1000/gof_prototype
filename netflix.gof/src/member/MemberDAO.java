@@ -37,6 +37,7 @@ public class MemberDAO {
 
 	public MemberBean findByPk(String email) {
 		MemberBean bean= null;
+		
 		String sql = "select * from member where email = ?";
 		try {
 			pstmt = conn.prepareStatement(sql);

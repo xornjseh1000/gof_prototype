@@ -26,7 +26,7 @@ create table member(
 	constraint FK_MEMBER_GRADE foreign key(grade)
 	references member_grade(grade) on delete cascade
 )
-
+select * from member;
 --------------------- member grade -----------------
 create table member_grade(
 	grade number(1) primary key

@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<link rel="stylesheet" href="browse.css" />
-<link rel="stylesheet" href="browse_table.css" />
-<jsp:include page="browse_top.jsp" />
-<jsp:include page="browse_header.jsp" /> 
+<link rel="stylesheet" href="${css}/browse.css" />
+<link rel="stylesheet" href="${css}/browse_table.css" />
+<jsp:include page="../global/browse_top.jsp" />
+<jsp:include page="../global/browse_header.jsp" /> 
 <div class="box">
 		<table id="video_detail">
 		<tr>
 			<td rowspan="8" style="width:50%;height:50%;">
-				<a href="video_play.jsp"><img src="matrix1.jpg" alt="매트릭스" width="600" height="280">
+				<a href="video_play.jsp"><img src="${img}/matrix.jpg" alt="매트릭스" width="600" height="280">
 				</a>
 			</td>
 			<td ><h3>매트릭스</h3></td>
@@ -44,9 +44,9 @@
 		</tr>
 		<tr>
 		    <td></td>
-		    <td > <a href="my_video.jsp">내 동영상 목록 </a></td>
+		    <td > <a href="${context}/video.do?page=my_video">내 동영상 목록 </a></td>
 		</tr>
 		</table>
 	</div>	
-<jsp:include page="browse_footer.jsp" />
-<jsp:include page="browse_end.jsp" /> 
+<jsp:include page="../global/browse_footer.jsp" />
+<jsp:include page="../global/browse_end.jsp" /> 

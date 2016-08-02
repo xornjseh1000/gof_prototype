@@ -22,30 +22,30 @@ h1 {text-align:center;table-layout:center }
 <br />
 
   <div class="container">
+  	<h3>${result}</h3>
     <label><b>로그인</b></label>
     <br />
     <br />
     
-    <input type="text" placeholder="Enter Useremail" name="uemail" required>
+    <input type="text" placeholder="Enter Useremail" name="email"   required>
     <br />
     <br />
 
     <label><b></b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+    <input type="password" placeholder="Enter Password" name="pw" required>
     <br />
     
     <span>이메일 또는 비밀번호를 잊으셨나요?</span>
         <br />
         <br />
         <br />
-    <input type="checkbox" checked="checked"> 로그인정보저장
     <div class="container" style="background-color:#f1f1f1">
   </div>
-        <br />
+        <br/>
   		<input type="hidden" name = "action" value="login"/>
 		 <input type="submit" value="로그인"/><br/>
-    <br />
-    <br />
+    <br/>
+    <br/>
   </div>
 
  
