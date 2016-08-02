@@ -12,13 +12,29 @@
 	<span style="color:red;font-size:20px">로그아웃</span></span>
 	<br />
 	<br />
-	<span>선호하시는 영화나TV프로그램을 3개선택하세요aa</span>
+	<span>선호하시는 영화나TV프로그램을 3개선택하세요</span>
 		<br /><br />
-
-	<button type="button";color="red";font-size=30px; onclick="alert('다음')">다음</button>
+	<table>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+	<input type="button" style="color=red;font-size=30px;"/>
+	
 		<p align="left"></p>
 		
-<iframe src="" frameborder="0"></iframe>
+
 </body>
 </html>
 	
