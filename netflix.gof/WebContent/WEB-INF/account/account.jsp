@@ -1,30 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="browse.css" />
 <link rel="stylesheet" href="browse_table.css" />
-<jsp:include page="browse_top.jsp" />
-<jsp:include page="browse_header.jsp" /> 
-<div class="box">
-		<h2>회원정보수정 </h2>
+<jsp:include page="../global/browse_top.jsp" />
+<jsp:include page="../global/browse_header.jsp" /> 
+<div id="box">
+		<h2>계정 <input type="submit" onclick=" location='member_update.jsp'" value="회원정보변경" /></h2>
 		<table id="member_detail">
 		<tr>
+			<td rowspan="5" style="width:40%">
+				멤버십&결제정보</br>
+				<input type="submit" value="멤버십해제" />
+			</td>
 			<td style="width:40%">Email</td>
-			<td style="width:40%"><input type="text" name="email" 
-					value="${user.email}"/></td>
+			<td style="width:40%">hong@gmail.com</td>
 		</tr>
 		<tr>
 			<td >비밀번호</td>
-			<td><input type="text" name="pw" 
-					value="${user.pw}"/></td>
+			<td>*****</td>
 		</tr>
 		<tr>
 			<td >휴대폰 번호</td>
-			<td><input type="text" name="phone" 
-					value="${user.phone}"/></td>
+			<td>010-1234-5678</td>
 		</tr>
 		<tr>
 			<td>결제정보</td>
-			<td><input type="text" name="cardno" 
-					value="${user.cardno}"/></td>
+			<td>**** **** **** 1234</td>
 		</tr>
 		<tr>
 		    <td></td>
@@ -40,5 +40,5 @@
 		<tr>
 		</table>
 	</div>
-<jsp:include page="account_footer.jsp" />
-<jsp:include page="browse_end.jsp" /> 
+<jsp:include page="../global/account_footer.jsp" />
+<jsp:include page="../global/browse_end.jsp" /> 

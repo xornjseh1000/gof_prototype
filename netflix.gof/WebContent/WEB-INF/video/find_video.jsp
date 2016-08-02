@@ -1,14 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<link rel="stylesheet" href="${css}/browse.css" />
-<link rel="stylesheet" href="${css}/browse_table.css" />
+<link rel="stylesheet" href="browse.css" />
+<link rel="stylesheet" href="browse_table.css" />
 <jsp:include page="../global/browse_top.jsp" />
 <jsp:include page="../global/browse_header.jsp" /> 
 <div class="box">
-	<h5 style="color:grey;">다음과 관련된 동영상 : 
-		<astyle="color:white;">null</a>
+	<h5>다음과 관련된 동영상 : 
+		<a style="color:grey;">null</a>
 	</h5>
-	<h5 style="color:grey;">사람 : 
-		<astyle="color:white;">null</a>
+	<h5>사람 : 
+		<a style="color:grey;">null</a>
 	</h5>
 		<table id="find_video">
 		<tr>
