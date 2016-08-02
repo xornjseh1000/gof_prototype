@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<link rel="stylesheet" href="browse.css" />
-<link rel="stylesheet" href="browse_table.css" />
-<jsp:include page="browse_top.jsp" />
+<link rel="stylesheet" href="${css}/browse.css" />
+<link rel="stylesheet" href="${css}/browse_table.css" />
+<jsp:include page="../global/browse_top.jsp" />
 <div id="header">
 	<h3><a href="index.jsp" style="color:red;">GoF </a>&nbsp; &nbsp;
 	    &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
@@ -23,4 +23,4 @@
 		</h4></br></br></br>
 		<input type="submit" value="다음" />
 	</div>
-<jsp:include page="browse_end.jsp" /> 
+<jsp:include page="../global/browse_end.jsp" /> 
