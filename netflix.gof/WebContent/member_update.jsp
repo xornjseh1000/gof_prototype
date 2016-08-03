@@ -26,19 +26,8 @@
 			<td><input type="text" name="cardno" 
 					value="${user.cardno}"/></td>
 		</tr>
-		<tr>
-		    <td></td>
-			<td><input type="submit" onclick=" location='payment_list.jsp'" value="결제상세정보" /></td>
-		</tr>
 		</table></br>
-		<table id="member_detail">
-		<tr>
-			<td >서비스상세정보</td>
-			<td >1동시접속 <input type="submit" value="멤버십 변경" /> </td>
-			
-		</tr>
-		<tr>
-		</table>
+		<input type="submit" onclick=" location='account.jsp'" value="수정완료" />
 	</div>
 <jsp:include page="account_footer.jsp" />
 <jsp:include page="browse_end.jsp" /> 

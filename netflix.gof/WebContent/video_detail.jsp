@@ -40,11 +40,8 @@
 			<td></td>
 		</tr>
 		<tr>
-		    <td style="color:grey">영화 특징: 흥미진지, 폭력, 암울한, 환각성, 공상</td>
-		</tr>
-		<tr>
-		    <td></td>
 		    <td > <a href="my_video.jsp">내 동영상 목록 </a></td>
+		    <td></td>
 		</tr>
 		</table>
 	</div>	
