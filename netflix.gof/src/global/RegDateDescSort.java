@@ -16,7 +16,7 @@ public class RegDateDescSort implements Comparator<VideoBigBean> {
 		try {
 			firstDate = format.parse(first.getRegDate());
 			secondDate = format.parse(second.getRegDate());
-			result = firstDate.compareTo(secondDate);
+			result = secondDate.compareTo(firstDate);
 			System.out.println(result);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

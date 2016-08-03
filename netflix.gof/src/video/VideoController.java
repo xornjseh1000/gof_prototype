@@ -24,20 +24,20 @@ public class VideoController {
 				VideoBigBean regBean = new VideoBigBean();
 				regBean.setGrade(19);
 				regBean.setSeason(1);
-				regBean.setEpisode(1);
-				regBean.setProducer_no(2);
+				regBean.setEpisode(2);
+				regBean.setProducer_no(3);
 				regBean.setGenre(Genre.ACTION.ordinal());
 				regBean.setCategory(Category.MOVIE.ordinal());
-				regBean.setGroupNo(0);
-				regBean.setTitle("제이슨 본");
-				regBean.setSubTitle("Jason Bourne");
-				regBean.setCreateYear("2016-07-28");
-				regBean.setS​ynopsis("모든 자취를 숨기고 사라졌던 제이슨 본, 그는 되찾은 기억 외에 과거를 둘러싼 또 다른 음모가 있다는 것을 알게 되고 마침내 CIA 앞에 자신의 존재를 드러내게 되는데… 가장 완벽하고 가장 치명적인 무기 ‘제이슨 본’ 이제 모든 것이 그에게 달렸다");
-				regBean.setRunningTime("02:03:00");
-				regBean.setFile("https://youtu.be/gCl9rawhxl8");
+				regBean.setGroupNo(5);
+				regBean.setTitle("다크나이트 라이즈");
+				regBean.setSubTitle("THE DARK KNIGHT RISE");
+				regBean.setCreateYear("2012-07-20");
+				regBean.setS​ynopsis("다크 나이트에서 하비 덴트가 죽고 8년이 지나 하비의 살인자로 낙인찍힌 배트맨은 종적을 감추었고, 범죄집단에 가담한 범죄자들을 블랙 게이트란 수용소에 집어넣고 가석방은 절대 시켜주지 않는 『 하비 덴트 특별법 』에 의해 고담시의 범죄율을 급감해 평화로운 나날이 이어지고 있었다.");
+				regBean.setRunningTime("02:44:00");
+				regBean.setFile("https://youtu.be/lPSYDCRliFA");
 				regBean.setLanguage("영어");
-				regBean.setPoster("JasonBourne.jpg");
-				regBean.setActorList("7:8:9");
+				regBean.setPoster("dardknightrise.jpg");
+				regBean.setActorList("1:8:9");
 				vService.insert(regBean);
 				break;
 			case "2":
@@ -55,7 +55,7 @@ public class VideoController {
 				}
 				break;
 			case "4":
-				Map<?,?> map = vService.search("THRILLER");
+				Map<?,?> map = vService.search("sf");
 				Iterator<?> it = map.keySet().iterator();
 				while(it.hasNext()){
 					int key = (int) it.next();
@@ -85,11 +85,13 @@ public class VideoController {
 				JOptionPane.showMessageDialog(null, vService.recommendList("2hwooo@naver.com").size());
 				break;
 			case "11":
-				JOptionPane.showMessageDialog(null, vService.getSeries(1, 6));
+				Map<Integer, List<VideoBigBean>> maps = (Map<Integer, List<VideoBigBean>>) vService.getSeries(5);
+				System.out.println(maps.size());
 				break;
 			case "12":
 				JOptionPane.showMessageDialog(null, vService.getCategoryList(Category.MOVIE.ordinal()));
 				break;
+			
 			default:
 				break;
 			}

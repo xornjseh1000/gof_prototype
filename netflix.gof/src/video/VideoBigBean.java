@@ -8,9 +8,10 @@ package video;
 */
 
 public class VideoBigBean {
-	private int serialNo,grade,season,episode,groupNo,producer_no,category,genre,gpa;
+	private int serialNo,grade,season,episode,groupNo,producer_no,category,genre;
 	private String title,subTitle,createYear,s​ynopsis,runningTime,
 			file,language,regDate,poster,actorList;
+	private double gpa;
 	//grade point average
 	public int getSerialNo() {
 		return serialNo;
@@ -121,10 +122,10 @@ public class VideoBigBean {
 		this.actorList = actorList;
 	}
 	
-	public int getGpa() {
+	public double getGpa() {
 		return gpa;
 	}
-	public void setGpa(int gpa) {
+	public void setGpa(double gpa) {
 		this.gpa = gpa;
 	}
 	@Override
@@ -133,6 +134,6 @@ public class VideoBigBean {
 				+ ", groupNo=" + groupNo + ", producer_no=" + producer_no + ", category=" + category + ", genre="
 				+ genre + ", title=" + title + ", subTitle=" + subTitle + ", createYear=" + createYear
 				+ ", runningTime=" + runningTime + ", file=" + file + ", language=" + language + ", regDate=" + regDate
-				+ ", poster=" + poster + ", actorList=" + actorList + "]\n";
+				+ ", poster=" + poster + ", actorList=" + actorList + " gpa=" + gpa + " ]\n";
 	}
 }

@@ -3,6 +3,7 @@ package video;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -256,18 +257,30 @@ public class VideoServiceImpl implements VideoService{
 		return vList;
 	}
 	@Override
-	public List<VideoBigBean> getSeries(int season,int groupNo) {
+	public Map<Integer,List<VideoBigBean>> getSeries(int groupNo) {
+		Map<Integer,List<VideoBigBean>> seriesMap = new HashMap<Integer,List<VideoBigBean>>();
 		List<VideoBigBean> vList = new ArrayList<VideoBigBean>();
 		Iterator<?> it = this.map.keySet().iterator();
+		List<Integer> seasonList = new ArrayList<Integer>();
 		while (it.hasNext()) {
 			VideoBigBean bigBean = (VideoBigBean) map.get(it.next());
-			if(bigBean.getSeason() == season && bigBean.getGroupNo()==groupNo){
-				vList.add(bigBean);
+			if(bigBean.getGroupNo()==groupNo){
+				seasonList.add(bigBean.getSeason());
 			}
 		}
-		Collections.sort(vList, new EpisodeAscSort());
-		
-		return vList;
+		seasonList = new ArrayList<Integer>(new HashSet<Integer>(seasonList));
+		for (Integer season : seasonList) {
+			it = this.map.keySet().iterator();
+			while(it.hasNext()){
+				VideoBigBean bigBean = map.get(it.next());
+				if(bigBean.getSeason() == season && bigBean.getGroupNo()==groupNo){
+					vList.add(bigBean);
+				}
+			}
+			Collections.sort(vList, new EpisodeAscSort());
+			seriesMap.put(season, vList);
+		}		
+		return seriesMap;
 	}
 	@Override
 	public List<VideoBigBean> getCategoryList(int category) {

@@ -222,7 +222,7 @@ public class VideoDAO {
 	}	
 	private int getGpa(int serialNo) {
 		int result = 0;
-		String sql = "SELECT NVL(AVG(POINT),0) GPA FROM GPA WHERE SERIAL_NO=?";
+		String sql = "SELECT NVL(ROUND(AVG(POINT),1),0) GPA FROM GPA WHERE SERIAL_NO=?";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, serialNo);
