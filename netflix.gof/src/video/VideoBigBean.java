@@ -1,5 +1,7 @@
 package video;
 
+import java.io.Serializable;
+
 /**
  * @date   :2016. 7. 26.
  * @author :HyunWoo Lee
@@ -7,7 +9,9 @@ package video;
  * @story  :
 */
 
-public class VideoBigBean {
+public class VideoBigBean implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
 	private int serialNo,grade,season,episode,groupNo,producer_no,category,genre;
 	private String title,subTitle,createYear,s​ynopsis,runningTime,
 			file,language,regDate,poster,actorList;

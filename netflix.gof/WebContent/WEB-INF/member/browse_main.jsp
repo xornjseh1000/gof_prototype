@@ -7,31 +7,47 @@
 		<h3>GoF 인기동영상 </h3>
 		<table id="pop_video">
 		<tr>
-			<td ><a href="${context}/video.do?page=video_detail"><img src="${img}/brakingbad.jpg" alt="브레킹베드" style="width:240px;height:150px;"></a></td>
-			<td ><a href="${context}/video.do?page=video_detail"><img src="${img}/dexter.jpg" alt="덱스터" style="width:240px;height:150px;"></a></td>
-			<td ><a href="${context}/video.do?page=video_detail"><img src="${img}/hungu.jpg" alt="헝거게임" style="width:240px;height:150px;"></a></td>
-			<td ><a href="${context}/video.do?page=video_detail"><img src="${img}/houseof.jpg" alt="하우스오브카드" style="width:240px;height:150px;"></a></td>
-			<td ><a href="${context}/video.do?page=video_detail"><img src="${img}/kimyhan.jpg" alt="기묘한이야기" style="width:240px;height:150px;"></a></td>
+		<c:forEach var="video" items="${hotlist}">
+			<td ><a href="${context}/video.do?page=video_detail&serialNo=${video.serialNo}"><img src="${img}/${video.poster}" alt="${video.title}" style="width:240px;height:150px;"></a></td>
+		</c:forEach>
 		</tr>
+		
+	
 		</table>
 		<h3>신규 동영상 </h3>
 		<table id="new_video">
 		<tr>
-			<td ><a href="${context}/video.do?page=video_detail"><img src="${img}/agassy.jpg" alt="아가씨" style="width:240px;height:150px;"></a></td>
-			<td ><a href="${context}/video.do?page=video_detail"><img src="${img}/goksung.jpg" alt="곡성" style="width:240px;height:150px;"></a></td>
-			<td ><a href="${context}/video.do?page=video_detail"><img src="${img}/independenceday.jpg" alt="인디펜더스데이" style="width:240px;height:150px;"></a></td>
-			<td ><a href="${context}/video.do?page=video_detail"><img src="${img}/nosecuret.jpg" alt="비밀은없다" style="width:240px;height:150px;"></a></td>
-			<td ><a href="${context}/video.do?page=video_detail"><img src="${img}/tric.jpg" alt="트릭" style="width:240px;height:150px;"></a></td>
+		<c:forEach var="video" items="${newlist}">
+			<td ><a href="${context}/video.do?page=video_detail&serialNo=${video.serialNo}"><img src="${img}/${video.poster}" alt="${video.title}" style="width:240px;height:150px;"></a></td>
+		</c:forEach>
 		</tr>
 		</table>
+		
+		
 		<h3>내 동영상목록 </h3>
 		<table id="my_video">
 		<tr>
-			<td ><a href="${context}/video.do?page=video_detail"><img src="${img}/matrix.jpg" alt="매트릭스" style="width:240px;height:150px;"></a></td>
-			<td ><a href="${context}/video.do?page=video_detail"><img src="${img}/matrix2.jpg" alt="매트릭스2" style="width:240px;height:150px;"></a></td>
-			<td ><a href="${context}/video.do?page=video_detail"><img src="${img}/matrix3.jpg" alt="매트릭스3" style="width:240px;height:150px;"></a></td>
-			<td ><a href="${context}/video.do?page=video_detail"><img src="${img}/jukyuk.jpg" alt="추격자" style="width:240px;height:150px;"></a></td>
-			<td ><a href="${context}/video.do?page=video_detail"><img src="${img}/davilsee.jpg" alt="악마를보았다" style="width:240px;height:150px;"></a></td>
+		<c:forEach var="video" items="${mylist}">
+			<td ><a href="${context}/video.do?page=video_detail&serialNo=${video.serialNo}"><img src="${img}/${video.poster}" alt="${video.title}" style="width:240px;height:150px;"></a></td>
+		</c:forEach>
+		</tr>
+		</table>
+		
+				<h3>추천 동영상 </h3>
+		<table id="my_video">
+		<tr>
+		<c:forEach var="video" items="${recommendlist}">
+			<td ><a href="${context}/video.do?page=video_detail&serialNo=${video.serialNo}"><img src="${img}/${video.poster}" alt="${video.title}" style="width:240px;height:150px;"></a></td>
+		</c:forEach>
+		</tr>
+		</table>
+		
+				<h3>즐겨찾기 목록 </h3>
+		<table id="my_video">
+		<tr>
+		<c:forEach var="video" items="${wishlist}">
+			<td ><a href="${context}/video.do?page=video_detail&serialNo=${video.serialNo}"><img src="${img}/${video.poster}" alt="${video.title}" style="width:240px;height:150px;"></a></td>
+		</c:forEach>
 		</tr>
 		</table>
 	</div>	

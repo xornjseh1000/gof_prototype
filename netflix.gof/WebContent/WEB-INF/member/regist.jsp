@@ -43,8 +43,6 @@ h { font-size=30px
 		
 		email<br/> <input type="text" name="userid"><br/><br/>
 		password <br/><input type="password" name="userpw"><br/><br/> 
-		이름<br/> <input type="text" name="username"><br/><br/>
-		전화번호 <br/><input type="text" name="userphone"><br/><br/> 
 
 			<input type="checkbox" name = "email_chk" value="" > email 수신여부 <br/><br/>
 		<input type="hidden" name = "directory" value="global"/>

@@ -19,12 +19,12 @@ public interface VideoService extends CommonService {
 	public int delete(VideoBean viBean);
 	
 	// main 
-	public Map<?,?> search(String keyword);
-	public List<?> myMovieList(String email);
-	public List<?> wishMovieList(String email);
-	public List<?> hotMovieList();
-	public List<?> newMovieList();
-	public List<?> recommendList(String email);
+	public Map<String,Map<Integer, List<VideoBigBean>>> search(String keyword);
+	public List<VideoBigBean> myMovieList(String email);
+	public List<VideoBigBean> wishMovieList(String email);
+	public List<VideoBigBean> hotMovieList();
+	public List<VideoBigBean> newMovieList();
+	public List<VideoBigBean> recommendList(String email);
 	public List<?> sort(List<VideoBigBean> vList,String order);
 	public Map<Integer,List<VideoBigBean>> getSeries(int groupNo);
 	public List<?> getCategoryList(int category);

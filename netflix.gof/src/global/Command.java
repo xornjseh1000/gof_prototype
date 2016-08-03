@@ -7,13 +7,14 @@ package global;
  * @story  :
 */
 public class Command implements Orderable {
-	private String directory,action,view,page;
+	private String directory,action,view,page,keyword;
 	
-	public Command(String directory,String action,String page) {
+	public Command(String directory,String action,String page,String keyword) {
 		this.directory = directory;
 		this.action = action; 
 		this.page = page;
 		this.setView();
+		this.keyword = keyword;
 	}
 	public Command(String directory,String action,String page
 			,String keyField,String keyword) {
@@ -46,4 +47,11 @@ public class Command implements Orderable {
 	public void setPage(String page) {
 		this.page = page;
 	}
+	public String getKeyword() {
+		return keyword;
+	}
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+	}
+	
 }

@@ -29,6 +29,7 @@
 			&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;
 			&nbsp;&nbsp;&nbsp;
 			&nbsp;&nbsp;
+	<input type="text" name="payment_year" placeholder="유효기간(월)" style="width: 70px"> 		
 	<select> 
 	<option value="유효기간(월)">유효기간(월)</option>
 	<option value="유효기간(월)">유효기간(월)</option>		
@@ -49,6 +50,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;
 			&nbsp;&nbsp;&nbsp;
 			&nbsp;&nbsp;
+<input type="text" name="payment_year" placeholder="유효기간(년)" style="width: 70px"> 			
 <select> <option value="유효기간(년)">유효기간(년)</option>
 	<option value="유효기간(년)">유효기간(년)</option>		
    <option value="2020">2020</option>
@@ -73,7 +75,8 @@
 	<input type="text" name="name" placeholder="이름"> 
 	&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
 	&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
-		
+	생년월일	&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+	<input type="text" name="year" placeholder="년도" style="width: 50px"> 
 	<select> <option value="연도">연도</option>
 	<option value="연도">연도</option>		
   <option value="2020">2020</option>
@@ -83,10 +86,10 @@
    
   
 </select>
-
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;
+<input type="text" name="month" placeholder="월" style="width: 50px"> 
 		
-	<select <option value="월">월</option>
+	<select> <option value="월">월</option>
 	<option value="월">월</option>		
   <option value="1월">1월</option>
   <option value="2월">2월</option>
@@ -104,6 +107,7 @@
 </select>
 
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;
+	<input type="text" name="day" placeholder="일" style="width: 50px"> 
 	<select <option value="일">일</option>
 	<option value="일">일</option>		
   <option value="1일">1일</option>
@@ -144,7 +148,8 @@
 				<input type="checkbox" id="myCheck"> 개인정보결제서비스업체제공동의 &nbsp;&nbsp;&nbsp;결제서비스업체
 				<br /><br /><br />
 			
-					<input type="hidden" name = "action" value="select_filme"/>
+					<input type="hidden" name = "email" value="${reg.email}"/>
+					<input type="hidden" name = "action" value="payment_reg"/>
 		  		<input type="submit" value="멤버쉽시작"/>
 				
 	</form>

@@ -27,13 +27,28 @@
 			<td><img src="${img}/spider.jpg" alt="" width="200" height="100"></td>
 		</tr>
 		<tr>
+			<td><input type="checkbox" name="fav_chk" value="1011"/></td>
+			<td><input type="checkbox" name="fav_chk" value="1012"/></td>
+			<td><input type="checkbox" name="fav_chk" value="1010"/></td>
+			<td><input type="checkbox" name="fav_chk" value="1021"/></td>
+			<td><input type="checkbox" name="fav_chk" value="1022"/></td>
+		</tr>
+		<tr>
 			<td><img src="${img}/dory.jpg" alt="" width="200" height="100"></td>
 			<td><img src="${img}/demolition.jpg" alt="" width="200" height="100"></td>
 			<td><img src="${img}/mypet.jpg" alt="" width="200" height="100"></td>
 			<td><img src="${img}/under_water.jpg" alt="" width="200" height="100"></td>
 			<td><img src="${img}/big.jpg" alt="" width="200" height="100"></td>
 		</tr>
+		<tr>
+			<td><input type="checkbox" name="fav_chk" value="1011"/></td>
+			<td><input type="checkbox" name="fav_chk" value="1012"/></td>
+			<td><input type="checkbox" name="fav_chk" value="1010"/></td>
+			<td><input type="checkbox" name="fav_chk" value="1021"/></td>
+			<td><input type="checkbox" name="fav_chk" value="1022"/></td>
+		</tr>
 	</table>
+	
 	</form>
 
 </body>
