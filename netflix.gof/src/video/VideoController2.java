@@ -52,6 +52,9 @@ public class VideoController2 extends HttpServlet {
 			break;
 		case "search":
 			Map<String,Map<Integer, List<VideoBigBean>>> sMap = (Map<String,Map<Integer, List<VideoBigBean>>>) vService.search(request.getParameter("keyword"));
+			if(sMap!=null){
+				// 검색결과 없다고 알려주는 페이지로 이동시킴
+			}
 			Map<Integer, List<VideoBigBean>> valueMap = null;
 			Iterator<?> it = null;
 			List<VideoBigBean> vList = null;
