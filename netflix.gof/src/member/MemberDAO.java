@@ -61,6 +61,8 @@ public class MemberDAO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+
 		return bean;
 		
 	}
@@ -68,13 +70,15 @@ public class MemberDAO {
 
 	public int insert(MemberBean memBean) {
 		int result = 0;
-		String sql = "insert into member(email, password, email_sv,prof_img,reg_date)"+" values (?,?,?,?,sysdate)";
+		String sql = "insert into member(email, password, email_sv,prof_img,reg_date,name,phone)"+" values (?,?,?,?,sysdate,?,?)";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, memBean.getEmail());
 			pstmt.setString(2, memBean.getPassword());
 			pstmt.setString(3, memBean.isRcvEmail()==true?"Y":"N");
 			pstmt.setString(4, memBean.getProfImg());
+			pstmt.setString(5, memBean.getName());
+			pstmt.setString(6, memBean.getPhone());
 			result = pstmt.executeUpdate();
 			System.out.println("DAO Insert Result: (1 if success)"+result);
 		} catch (Exception e) {

@@ -16,7 +16,7 @@ h1 {
 }
  a:link { color: white; text-decoration: none;}
  a:visited { color: white; text-decoration: none;}
- a:hover { color: white; text-decoration: underline;}
+ a:hover { color: white; text-decoration: none;}
 </style>
 </head>
 <body>

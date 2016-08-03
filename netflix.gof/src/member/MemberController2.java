@@ -39,11 +39,29 @@ public class MemberController2 extends HttpServlet {
 			Separator.command.setView();
 			DispatcherServlet.send(request,response,Separator.command);				
 			break;
-		case "payment":
-			Separator.command.setPage(Separator.command.getAction());
+		case "regist":
+			bean = new MemberBean();
+			bean.setEmail(request.getParameter("userid"));
+			bean.setPassword(request.getParameter("userpw"));
+			bean.setRcvEmail(true);
+
+			int count = service.regist(bean);
+			if(count == 1){
+				Separator.command.setPage("payment");	
+				request.setAttribute("regist_fail", "");				
+			}else{
+				Separator.command.setPage("regist");
+				request.setAttribute("regist_fail", "회원가입 실패");				
+			}
 			Separator.command.setView();
 			DispatcherServlet.send(request,response,Separator.command);			
 			break;
+		case "payment_reg":
+			bean = new MemberBean();
+			bean.setName(request.getParameter("name"));
+			bean.setPhone(request.getParameter("phone"));
+			DispatcherServlet.send(request,response,Separator.command);			
+			break;			
 		case "regist_complete":
 			Separator.command.setPage("main_before");
 			Separator.command.setView();
@@ -52,10 +70,11 @@ public class MemberController2 extends HttpServlet {
 		case "login":
 			Separator.command.setPage("browse_main");
 			Separator.command.setView();
-			DispatcherServlet.send(request,response,Separator.command);			
-			
+			bean = new MemberBean();
+			bean.setEmail(request.getParameter("email"));
+			bean.setPassword(request.getParameter("pw"));
 			session = request.getSession();
-			bean = service.login(request.getParameter("email"), request.getParameter("pw"));
+			bean = service.login(bean);
 			if(bean.getEmail().equals("fail")){
 				System.out.println("fail");
 				Separator.command.setPage("login");
@@ -66,11 +85,12 @@ public class MemberController2 extends HttpServlet {
 			}
 			Separator.command.setView();
 			request.setAttribute("result", bean.getEmail().equals("fail")?"로그인실패":"");
+			DispatcherServlet.send(request,response,Separator.command);		
 			break;
 		default:
 			break;
 		}
-		DispatcherServlet.send(request,response,Separator.command);			
+			
 	}
 
 }

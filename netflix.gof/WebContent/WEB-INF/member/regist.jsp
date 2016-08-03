@@ -6,7 +6,7 @@
 <meta charset="UTF-8" />
 <title>NETFLIX</title>
 
-<link rel="stylesheet" href="mystles.css">
+
 <style  type="text/css">
 body {
 	background-color: white ;
@@ -16,7 +16,9 @@ body {
 h { font-size=30px
 	color: red;
 }
-
+ a:link { color: black; text-decoration: none;}
+ a:visited { color: black; text-decoration: none;}
+ a:hover { color: black; text-decoration: none;}
 </style>
 </head>
 <body>
@@ -24,30 +26,29 @@ h { font-size=30px
 	<span  style="color: red; font-size: 30px;text-align: =left">NETFLIX</span>
 
 
-	<span  style="color: red; font-size: 20px; text-align:=right ">로그인</span>
+	<span  style="color: red; font-size: 20px; float: right;">
+	<a href="${context}/member.do?page=login&action=move"">로그인</a></span>
 
 
 </head>
 <p></p>
 <p></p>
-
+	${regist_fail}
 	<h2 text-align:=left>계정등록</h2>
 
 	<br />
 	<br />
 	
 	<form action="${context}/member.do" method="get">
-		email<br> <input type="text" name="userid">
-		<span>#이미 등록된 이메일입니다</span>
 		
-		<br> </br> password <br> <input type="password"
-			name="psw"> <br /> <br />
+		email<br/> <input type="text" name="userid"><br/><br/>
+		password <br/><input type="password" name="userpw"><br/><br/> 
+		이름<br/> <input type="text" name="username"><br/><br/>
+		전화번호 <br/><input type="text" name="userphone"><br/><br/> 
 
-		
-			<input type="checkbox" id="myCheck" onmouseover="myFunction()"
-				onclick="alert('click event occured')"> email 수신여부 </br/>
+			<input type="checkbox" name = "email_chk" value="" > email 수신여부 <br/><br/>
 		<input type="hidden" name = "directory" value="global"/>
-		<input type="hidden" name = "action" value="payment"/>
+		<input type="hidden" name = "action" value="regist"/>
 		<input type="submit" value="등록"/>	
 		</form>
 	

@@ -13,7 +13,7 @@
 		
 		<input type="submit" onclick=" location='${context}/video.do?page=find_video'" value="찾기" />
 	<select name="profile" onchange="location = this.value;">
-		<option value="">홍길동</option>
+		<option value="">${user.name}</option>
      	<option value="${context}/member.do?page=account">계 정</option>
      	<option value="${context}/customer.do?page=customer">고객센터</option>
      	<option value="${context}/member.do?page=logout">GoF에서 로그아웃</option>
