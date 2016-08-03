@@ -22,22 +22,22 @@ public class VideoController {
 			switch (JOptionPane.showInputDialog("1.")) {
 			case "1":
 				VideoBigBean regBean = new VideoBigBean();
-				regBean.setGrade(19);
+				regBean.setGrade(12);
 				regBean.setSeason(1);
 				regBean.setEpisode(1);
-				regBean.setProducer_no(2);
-				regBean.setGenre(Genre.ACTION.ordinal());
-				regBean.setCategory(Category.MOVIE.ordinal());
+				regBean.setProducer_no(3);
+				regBean.setGenre(Genre.INFORM.ordinal());
+				regBean.setCategory(Category.DOCUMENTARY.ordinal());
 				regBean.setGroupNo(0);
-				regBean.setTitle("제이슨 본");
-				regBean.setSubTitle("Jason Bourne");
-				regBean.setCreateYear("2016-07-28");
-				regBean.setS​ynopsis("모든 자취를 숨기고 사라졌던 제이슨 본, 그는 되찾은 기억 외에 과거를 둘러싼 또 다른 음모가 있다는 것을 알게 되고 마침내 CIA 앞에 자신의 존재를 드러내게 되는데… 가장 완벽하고 가장 치명적인 무기 ‘제이슨 본’ 이제 모든 것이 그에게 달렸다");
-				regBean.setRunningTime("02:03:00");
-				regBean.setFile("https://youtu.be/gCl9rawhxl8");
+				regBean.setTitle("The Blue Planet");
+				regBean.setSubTitle("A Natural History of the Oceans");
+				regBean.setCreateYear("2011-03-13");
+				regBean.setS​ynopsis("우리에게 익숙한 바다, 비밀에 싸인 심해와 그곳에 사는 생물들까지 심도 있게 파헤치는 다큐멘터리. 데이비드 애튼버러가 해설을 맡았다.");
+				regBean.setRunningTime("00:48:00");
+				regBean.setFile("https://youtu.be/eH1s9GCqPKo");
 				regBean.setLanguage("영어");
-				regBean.setPoster("JasonBourne.jpg");
-				regBean.setActorList("7:8:9");
+				regBean.setPoster("blueplanet.jpg");
+				regBean.setActorList("5");
 				vService.insert(regBean);
 				break;
 			case "2":
@@ -55,7 +55,7 @@ public class VideoController {
 				}
 				break;
 			case "4":
-				Map<?,?> map = vService.search("김");
+				Map<?,?> map = vService.search("sf");
 				Iterator<?> it = map.keySet().iterator();
 				while(it.hasNext()){
 					int key = (int) it.next();
@@ -65,6 +65,7 @@ public class VideoController {
 						System.out.println(key + " : "+ list);
 					}
 				}
+				break;
 			case "5": //myBOokamrk
 				JOptionPane.showMessageDialog(null, vService.wishMovieList("2hwooo@naver.com"));
 				break;
@@ -79,6 +80,20 @@ public class VideoController {
 				break;
 			case "9":
 				JOptionPane.showMessageDialog(null, vService.detail(1010).getS​ynopsis());
+				break;
+			case "10":
+				JOptionPane.showMessageDialog(null, vService.recommendList("2hwooo@naver.com").size());
+				break;
+			case "11":
+				Map<Integer, List<VideoBigBean>> maps = (Map<Integer, List<VideoBigBean>>) vService.getSeries(21);
+				System.out.println(maps.size());
+				break;
+			case "12":
+				JOptionPane.showMessageDialog(null, vService.getCategoryList(Category.DRAMA.ordinal()));
+				break;
+			case "13":
+				List<VideoBigBean> list = (List<VideoBigBean>) vService.list();
+				JOptionPane.showMessageDialog(null, vService.sort(list,""));
 				break;
 			default:
 				break;

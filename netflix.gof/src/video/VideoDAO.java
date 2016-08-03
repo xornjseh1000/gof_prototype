@@ -213,7 +213,6 @@ public class VideoDAO {
 				bigBean.setGpa(this.getGpa(bigBean.getSerialNo()));
 				bigBean.setActorList(this.getActorList(bigBean.getSerialNo()));
 				tempMap.put(bigBean.getSerialNo(), bigBean);
-				
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -223,7 +222,7 @@ public class VideoDAO {
 	}	
 	private int getGpa(int serialNo) {
 		int result = 0;
-		String sql = "SELECT NVL(AVG(POINT),0) GPA FROM GPA WHERE SERIAL_NO=?";
+		String sql = "SELECT NVL(ROUND(AVG(POINT),1),0) GPA FROM GPA WHERE SERIAL_NO=?";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, serialNo);
@@ -358,12 +357,4 @@ public class VideoDAO {
 		return tempList;
 	}
 
-	public List<VideoBigBean> selectRecList(int[] genre) {
-		List<VideoBigBean> tempList = new ArrayList<VideoBigBean>();
-		return null;
-	}
-
-	
-
-	
 }

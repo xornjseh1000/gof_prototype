@@ -1,16 +1,15 @@
 ----------------------- actor -----------------------(배우 CRUD등록읽기수정삭제용)
 create sequence actor_seq
 start with 1;
-	 select * from member; 
+	
 create table actor(
 	actor_no int primary key,
 	kor_name varchar2(30),
 	eng_name varchar2(30),
 	profile_img varchar2(100)
 )
-delete from member where email = 'aa';
 ----------------------- member -----------------------회원
-select * from member;
+
 create table member(
 	email varchar2(50) primary key,
 	name varchar2(30),

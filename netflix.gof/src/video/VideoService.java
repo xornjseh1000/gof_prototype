@@ -25,7 +25,9 @@ public interface VideoService extends CommonService {
 	public List<?> hotMovieList();
 	public List<?> newMovieList();
 	public List<?> recommendList(String email);
-	public List<?> sort(String order);
+	public List<?> sort(List<VideoBigBean> vList,String order);
+	public Map<Integer,List<VideoBigBean>> getSeries(int groupNo);
+	public List<?> getCategoryList(int category);
 	public VideoBigBean detail(int serialNo);
 	public void playMovie(VideoBean mvBean);
 	
