@@ -91,7 +91,10 @@ public class VideoController {
 			case "12":
 				JOptionPane.showMessageDialog(null, vService.getCategoryList(Category.MOVIE.ordinal()));
 				break;
-			
+			case "13":
+				List<VideoBigBean> list = (List<VideoBigBean>) vService.list();
+				JOptionPane.showMessageDialog(null, vService.sort(list,"gpa"));
+				break;
 			default:
 				break;
 			}
