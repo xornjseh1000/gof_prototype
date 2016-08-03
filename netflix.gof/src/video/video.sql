@@ -250,3 +250,11 @@ WHERE RK < 10;
 
 
 select * from video_detail where genre=5 OR genre=0 or genre = 3;
+
+select serial_no from video where title='제이슨보';
+select title from video;
+
+select serial_no,title from video;
+
+update video set file_url = 'https://www.youtube.com/embed/IUSivRMS330' where serial_no=1011;
+

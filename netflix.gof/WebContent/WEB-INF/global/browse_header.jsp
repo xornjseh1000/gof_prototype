@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <div id="header">
-	<h3><a href="${context}/member.do?page=browse_main" style="color:red;">Netfilx </a></h3>&nbsp; &nbsp;
+	<h3><a href="${context}/member.do?action=browse_main" style="color:red;">Netfilx </a></h3>&nbsp; &nbsp;
 	<select name="menu" onchange="location = this.value;">
 	 <option value="">메뉴</option>
      <option value="${context}/member.do?page=browse_main">홈</option>

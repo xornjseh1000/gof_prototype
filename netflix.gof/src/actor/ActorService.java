@@ -1,5 +1,7 @@
 package actor;
 
+import java.util.List;
+
 import global.CommonService;
 
 /**
@@ -14,4 +16,5 @@ public interface ActorService extends CommonService {
 	public int regist(ActorBean acBean);
 	public int update(ActorBean acBean);
 	public int delete(int actorNo);
+	public List<ActorBean> getActorNames(String actorList);
 }

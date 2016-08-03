@@ -1,5 +1,7 @@
 package customer;
 
+import java.io.Serializable;
+
 /**
  * @date   :2016. 7. 7.
  * @author :HyunWoo Lee
@@ -7,7 +9,11 @@ package customer;
  * @story  :
 */
 
-public class CustomerBean {
+public class CustomerBean implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int cusSeq;
 	private String category,title,content;
 	

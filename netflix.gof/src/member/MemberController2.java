@@ -41,6 +41,19 @@ public class MemberController2 extends HttpServlet {
 			break;
 		case "browse_main":
 			System.out.println("browse_main");
+			bean = (MemberBean) session.getAttribute("user");
+			List<VideoBigBean> hotList = (List<VideoBigBean>) vService.hotMovieList();
+			request.setAttribute("hotlist", hotList);
+			List<VideoBigBean> newList = (List<VideoBigBean>) vService.newMovieList();
+			request.setAttribute("newlist", newList);
+			List<VideoBigBean> myList = (List<VideoBigBean>) vService.myMovieList(bean.getEmail());
+			request.setAttribute("mylist", myList);
+			List<VideoBigBean> recommendList = (List<VideoBigBean>) vService.recommendList(bean.getEmail());
+			request.setAttribute("recommendlist", recommendList);
+			List<VideoBigBean> wishList = (List<VideoBigBean>) vService.wishMovieList(bean.getEmail());
+			request.setAttribute("wishlist", wishList);
+			Separator.command.setPage("browse_main");
+			Separator.command.setView();
 			DispatcherServlet.send(request,response,Separator.command);			
 			break;
 		case "regist_complete":
@@ -115,15 +128,15 @@ public class MemberController2 extends HttpServlet {
 			}
 			Separator.command.setView();
 			request.setAttribute("result", bean.getEmail().equals("fail")?"로그인실패":"");
-			List<VideoBigBean> hotList = (List<VideoBigBean>) vService.hotMovieList();
+			hotList = (List<VideoBigBean>) vService.hotMovieList();
 			request.setAttribute("hotlist", hotList);
-			List<VideoBigBean> newList = (List<VideoBigBean>) vService.newMovieList();
+			newList = (List<VideoBigBean>) vService.newMovieList();
 			request.setAttribute("newlist", newList);
-			List<VideoBigBean> myList = (List<VideoBigBean>) vService.myMovieList(bean.getEmail());
+			myList = (List<VideoBigBean>) vService.myMovieList(bean.getEmail());
 			request.setAttribute("mylist", myList);
-			List<VideoBigBean> recommendList = (List<VideoBigBean>) vService.recommendList(bean.getEmail());
+			recommendList = (List<VideoBigBean>) vService.recommendList(bean.getEmail());
 			request.setAttribute("recommendlist", recommendList);
-			List<VideoBigBean> wishList = (List<VideoBigBean>) vService.wishMovieList(bean.getEmail());
+			wishList = (List<VideoBigBean>) vService.wishMovieList(bean.getEmail());
 			request.setAttribute("wishlist", wishList);
 			DispatcherServlet.send(request,response,Separator.command);		
 			break;

@@ -1,9 +1,15 @@
 package member;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class MemberBean {
+public class MemberBean implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private String name,email,password,phone,regDate,birth,profImg,cardNum, fav;
 
 	private boolean isRcvEmail;

@@ -312,4 +312,9 @@ public class VideoServiceImpl implements VideoService{
 		}
 		return vList;
 	}
+	@Override
+	public int checkBookmark(String email, int serialNo) {
+	
+		return vDao.selectBookmark(email,serialNo);
+	}
 }

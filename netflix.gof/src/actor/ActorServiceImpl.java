@@ -1,5 +1,6 @@
 package actor;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -50,5 +51,14 @@ public class ActorServiceImpl implements ActorService{
 		int result = 0;
 		result = actDAO.delete(actorNo);
 		return result;
+	}
+	@Override
+	public List<ActorBean> getActorNames(String actorList) {
+		List<ActorBean> list = new ArrayList<ActorBean>();
+		String[] actors = actorList.split(":");
+		for (String actor : actors) {
+			list.add(this.findByPk(Integer.parseInt(actor)));
+		}		
+		return list;
 	}
 }

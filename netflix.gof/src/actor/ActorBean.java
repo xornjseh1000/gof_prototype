@@ -1,5 +1,7 @@
 package actor;
 
+import java.io.Serializable;
+
 /**
  * @date   :2016. 7. 7.
  * @author :HyunWoo Lee
@@ -7,7 +9,9 @@ package actor;
  * @story  :
 */
 
-public class ActorBean {
+public class ActorBean implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
 	private int actorNo;
 	private String korName,engName,profileImg;
 	

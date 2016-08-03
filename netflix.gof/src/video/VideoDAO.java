@@ -357,4 +357,23 @@ public class VideoDAO {
 		return tempList;
 	}
 
+	public int selectBookmark(String email, int serialNo) {
+		int result = 0;
+		String sql = "SELECT COUNT(*) AS CNT FROM BOOKMARK WHERE EMAIL=? AND SERIAL_NO=?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, email);
+			pstmt.setInt(2, serialNo);
+			rs = pstmt.executeQuery();
+			if(rs.next()){
+				result = rs.getInt("CNT");
+			}
+			System.out.println(result);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		
+		return result;
+	}
+
 }

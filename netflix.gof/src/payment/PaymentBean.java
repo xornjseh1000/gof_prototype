@@ -1,6 +1,12 @@
 package payment;
 
-public class PaymentBean {
+import java.io.Serializable;
+
+public class PaymentBean implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int paySeq,price;
 	private String cardNum,company,payDate,expireDate;
 	
