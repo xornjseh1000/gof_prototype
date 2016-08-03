@@ -15,7 +15,6 @@ import javax.servlet.http.HttpServletResponse;
 
 public class DispatcherServlet {
 	public static void send(HttpServletRequest request, HttpServletResponse response,Command command) throws ServletException, IOException{
-		System.out.println("getView() "+command.getView());
 		request.getRequestDispatcher(command.getView()).forward(request, response);
 	}
 }

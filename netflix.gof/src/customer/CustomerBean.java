@@ -35,4 +35,10 @@ public class CustomerBean {
 	public void setContent(String content) {
 		this.content = content;
 	}
+	@Override
+	public String toString() {
+		return "CustomerBean [cusSeq=" + cusSeq + ", category=" + category + ", title=" + title + ", content=" + content
+				+ "]\n";
+	}
+	
 }

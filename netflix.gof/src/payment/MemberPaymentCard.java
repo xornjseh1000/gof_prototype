@@ -3,6 +3,7 @@ package payment;
 public class MemberPaymentCard {
 	private int paySeq,price,birth,grade;
 	private String email,cardNum,name,company,payDate,expireDate,phone;
+	
 	public int getPaySeq() {
 		return paySeq;
 	}

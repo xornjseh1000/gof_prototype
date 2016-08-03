@@ -1,5 +1,5 @@
 package global;
 
 public enum Category {
-	ACTION,COMEDY,MELO,THRILLER,HORROR,SF
+	TV_PROGRAM,MOVIE,DRAMA,DOCUMENTARY;
 }

@@ -7,7 +7,7 @@ package video;
  * @story  :
 */
 
-public class VideoActor extends VideoBean {
+public class VideoActor extends VideoBigBean {
 	private int season,episode,groupNo,actorNo;
 	private String subTitle,korName,engName,profileImg;
 

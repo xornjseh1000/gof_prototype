@@ -35,4 +35,10 @@ public class ActorBean {
 	public void setProfileImg(String profileImg) {
 		this.profileImg = profileImg;
 	}
+	@Override
+	public String toString() {
+		return "ActorBean [actorNo=" + actorNo + ", korName=" + korName + ", engName=" + engName + ", profileImg="
+				+ profileImg + "]\n";
+	}
+	
 }

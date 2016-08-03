@@ -8,7 +8,7 @@ package video;
 */
 
 public class VideoBean {
-	private int serialNo,grade,season,episode,groupNo,producer_no,category,genre;
+	private int serialNo;
 	private String title,subTitle,createYear,s​ynopsis,runningTime,
 			file,language,regDate,poster;
 	//grade point average
@@ -18,17 +18,17 @@ public class VideoBean {
 	public void setSerialNo(int serialNo) {
 		this.serialNo = serialNo;
 	}
-	public int getGrade() {
-		return grade;
-	}
-	public void setGrade(int grade) {
-		this.grade = grade;
-	}
 	public String getTitle() {
 		return title;
 	}
 	public void setTitle(String title) {
 		this.title = title;
+	}
+	public String getSubTitle() {
+		return subTitle;
+	}
+	public void setSubTitle(String subTitle) {
+		this.subTitle = subTitle;
 	}
 	public String getCreateYear() {
 		return createYear;
@@ -72,47 +72,11 @@ public class VideoBean {
 	public void setPoster(String poster) {
 		this.poster = poster;
 	}
-	public int getSeason() {
-		return season;
-	}
-	public void setSeason(int season) {
-		this.season = season;
-	}
-	public int getEpisode() {
-		return episode;
-	}
-	public void setEpisode(int episode) {
-		this.episode = episode;
-	}
-	public int getGroupNo() {
-		return groupNo;
-	}
-	public void setGroupNo(int groupNo) {
-		this.groupNo = groupNo;
-	}
-	public String getSubTitle() {
-		return subTitle;
-	}
-	public void setSubTitle(String subTitle) {
-		this.subTitle = subTitle;
-	}
-	public int getProducer_no() {
-		return producer_no;
-	}
-	public void setProducer_no(int producer_no) {
-		this.producer_no = producer_no;
-	}
-	public int getCategory() {
-		return category;
-	}
-	public void setCategory(int category) {
-		this.category = category;
-	}
-	public int getGenre() {
-		return genre;
-	}
-	public void setGenre(int genre) {
-		this.genre = genre;
+	@Override
+	public String toString() {
+		return "VideoBean [serialNo=" + serialNo + ", title=" + title + ", subTitle=" + subTitle + ", createYear="
+				+ createYear + ", runningTime=" + runningTime + ", file=" + file + ", language=" + language
+				+ ", regDate=" + regDate + ", poster=" + poster + "]\n";
 	}
 	
 	

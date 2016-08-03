@@ -1,4 +1,4 @@
-package global;
+package customer;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,22 +8,29 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import global.DispatcherServlet;
+import global.Separator;
 
-@WebServlet("/account.do")
-public class GlobalController extends HttpServlet {
+/**
+ * Servlet implementation class MemberController
+ */
+@WebServlet("/customer.do")
+public class CustomerController2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
+       
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Separator.init(request, response);
 		HttpSession session = request.getSession();
 		switch (Separator.command.getAction()) {
-		case "account":
-			System.out.println("account");
+		case "move":
+			Separator.command.setDirectory("member");	
 			DispatcherServlet.send(request,response,Separator.command);			
 			break;
-		case "browse_main":
-			System.out.println("browse_main");
+
+		case "login":
+			Separator.command.setPage("browse_main");
+			Separator.command.setView();
 			DispatcherServlet.send(request,response,Separator.command);			
 			break;
 		default:

@@ -49,6 +49,8 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public int regist(MemberBean memBean) {
 		int result = 0;
+		memBean.setProfImg("default.jpg");
+		
 		if (dao.insert(memBean)==1) {
 			System.out.println("Registration success from DAO");
 			result = 1;
@@ -65,7 +67,6 @@ public class MemberServiceImpl implements MemberService {
 			System.out.println("Login success from DAO");
 		} else {
 			System.out.println("Login failed from DAO");
-			loginBean.setEmail("fail");
 		}
 		return loginBean;
 	}

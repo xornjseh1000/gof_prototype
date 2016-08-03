@@ -4,11 +4,14 @@ import java.util.List;
 import java.util.Map;
 
 
+
 public class PaymentServiceImpl implements PaymentService{
 	private PaymentDAO pDao = PaymentDAO.getInstance();
 	private static PaymentServiceImpl instance = new PaymentServiceImpl();
+	private Map<Integer, PaymentBean> map;
 	
 	private PaymentServiceImpl() {
+		this.map();
 	}
 	public static PaymentServiceImpl getInstance() {
 		return instance;
@@ -24,7 +27,8 @@ public class PaymentServiceImpl implements PaymentService{
 	}
 	@Override
 	public Map<Integer, PaymentBean> map() {
-		return null;
+		this.map = pDao.selectMap();
+		return this.map;
 	}
 	@Override
 	public PaymentBean findByPk(int paySeq) {
@@ -35,15 +39,18 @@ public class PaymentServiceImpl implements PaymentService{
 		boolean result = false;
 		if(pDao.insert(pcmBean)==1){
 			result = true;
+			this.map();
 		}
 		return result;
 	}
 	@Override
 	public int update(PaymentBean payBean) {
+		this.map();
 		return pDao.update(payBean);
 	}
 	@Override
 	public int delete(int paySeq) {
+		this.map();
 		return pDao.delete(paySeq);
 	}
 	@Override

@@ -1,6 +1,7 @@
 package video;
 
 import java.util.List;
+import java.util.Map;
 
 import global.CommonService;
 
@@ -13,16 +14,19 @@ import global.CommonService;
 
 public interface VideoService extends CommonService {
 	
-	public int insert(VideoBean viBean);
+	public int insert(VideoBigBean viBean);
 	public int update(VideoBean viBean);
 	public int delete(VideoBean viBean);
 	
 	// main 
-	public List<VideoBean> myMovieList(String email);
-	public List<VideoBean> wishMovieList(String email);
-	public List<VideoBean> hotMovieList();
-	public List<VideoBean> newMovieList();
-	public List<VideoBean> sort(String order);
-	public VideoBean detail(int serialNo);
+	public Map<?,?> search(String keyword);
+	public List<?> myMovieList(String email);
+	public List<?> wishMovieList(String email);
+	public List<?> hotMovieList();
+	public List<?> newMovieList();
+	public List<?> recommendList(String email);
+	public List<?> sort(String order);
+	public VideoBigBean detail(int serialNo);
 	public void playMovie(VideoBean mvBean);
+	
 }
