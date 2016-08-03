@@ -1,13 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<link rel="stylesheet" href="login.css" />
-<link rel="stylesheet" href="login_table.css" />
-<jsp:include page="login_top.jsp" />
-<jsp:include page="login_header.jsp" /> 
+<link rel="stylesheet" href="${css}/browse.css" />
+<link rel="stylesheet" href="${css}/browse_table.css" />
+<jsp:include page="../global/browse_top.jsp" />
+<jsp:include page="../global/browse_header.jsp" /> 
 <div class="box">
-		<h2>회원정보수정 </h2>
-		<table id="member_update">
+		<h2>계정 <input type="submit" onclick=" location='member_update.jsp'" value="회원정보변경" /></h2>
+		<table id="account_detail">
 		<tr>
-			<td rowspan="4" style="width:40%">Email</td>
+			<td rowspan="5" style="width:40%">
+				멤버십&결제정보</br>
+				<input type="submit" value="멤버십해제" />
+			</td>
 			<td style="width:40%">hong@gmail.com</td>
 		</tr>
 		<tr>
@@ -35,5 +38,5 @@
 		<tr>
 		</table>
 	</div>
-<jsp:include page="login_footer.jsp" />
-<jsp:include page="login_end.jsp" /> 
+<jsp:include page="../global/account_footer.jsp" />
+<jsp:include page="../global/browse_end.jsp" /> 

@@ -37,7 +37,7 @@ public class Separator {
 		
 		System.out.println("DIRECTORY : " + directory);
 		System.out.println("CMD : " + action + " PAGE : " + page);
-		command = factory.createCommand(directory,action,page);
+		command = factory.createCommand(directory,action,page,keyword);
 		return command;
 	}
 }

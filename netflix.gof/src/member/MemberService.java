@@ -13,7 +13,7 @@ import payment.MemberPaymentCard;
 public interface MemberService extends CommonService{
 	public MemberBean findByPk(String email);
 	public int regist(MemberBean memBean);
-	public MemberBean login(String email, String password);
+	public MemberBean login(MemberBean memBean);
 	public int update(MemberPaymentCard pcmBean);
 	public int delete(MemberBean memBean);
 	public int addBk(String email,int serialNo);

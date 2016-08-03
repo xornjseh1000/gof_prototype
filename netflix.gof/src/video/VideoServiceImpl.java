@@ -46,7 +46,8 @@ public class VideoServiceImpl implements VideoService{
 		return null;
 	}
 	@Override
-	public Map<Integer, List<VideoBigBean>> search(String keyword) {
+	public Map<String,Map<Integer, List<VideoBigBean>>> search(String keyword) {
+		Map<String,Map<Integer, List<VideoBigBean>>> resultMap = new HashMap<String,Map<Integer, List<VideoBigBean>>>();
 		Iterator<?> it = this.map.keySet().iterator();
 		Map<Integer,List<VideoBigBean>> vMap = new HashMap<Integer,List<VideoBigBean>>();
 		List<VideoBigBean> vList = null;
@@ -56,11 +57,11 @@ public class VideoServiceImpl implements VideoService{
 				vList = new ArrayList<VideoBigBean>();
 				vList.add(bigBean);
 				vMap.put(bigBean.getSerialNo(), vList);
-				
 			}
 		}
 		if(!vMap.isEmpty()){
-			return vMap;
+			resultMap.put("title", vMap);
+			return resultMap;
 		}
 		Map<Integer,List<VideoBigBean>> actMap = new HashMap<Integer,List<VideoBigBean>>();
  		List<ActorBean> aList = aDao.selectBy("KOR_NAME", keyword);
@@ -82,7 +83,8 @@ public class VideoServiceImpl implements VideoService{
 			}
  		}
  		if(!actMap.isEmpty()){
- 			return actMap;
+ 			resultMap.put("actor", actMap);
+ 			return resultMap;
  		}
  		
  		int genre = this.checkGenre(keyword);
@@ -97,9 +99,10 @@ public class VideoServiceImpl implements VideoService{
  				}
  			}
  			genreMap.put(genre, vList);
- 			return genreMap;
+ 			resultMap.put("genre", genreMap);
+ 			return resultMap;
  		}
- 		return null;
+ 		return resultMap;
 	}
 	public boolean checkActorList(String actorList,int actorNo){
 		boolean result = false;
@@ -250,7 +253,7 @@ public class VideoServiceImpl implements VideoService{
 		while (it.hasNext()) {
 			VideoBigBean bigBean = (VideoBigBean) map.get(it.next());
 			genre = bigBean.getGenre();
-			if(genre==genres[0]||genre==genres[1]||genre==genres[2]){
+			if((genre==genres[0]||genre==genres[1]||genre==genres[2])&&bigBean.getEpisode()==1){
 				vList.add(bigBean);
 			}
 		}

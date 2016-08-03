@@ -8,8 +8,11 @@ create table actor(
 	eng_name varchar2(30),
 	profile_img varchar2(100)
 )
+select poster from VIDEO;
 ----------------------- member -----------------------회원
-
+select * from member;
+delete from member where email = 'aa23';
+delete 
 create table member(
 	email varchar2(50) primary key,
 	name varchar2(30),

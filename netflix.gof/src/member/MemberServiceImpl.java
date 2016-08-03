@@ -61,11 +61,14 @@ public class MemberServiceImpl implements MemberService {
 	}
 	
 	@Override
-	public MemberBean login(String email, String password) {
-		MemberBean loginBean = dao.findByPk(email);
-		if (loginBean!=null && loginBean.getPassword().equals(password)) {
+	public MemberBean login(MemberBean memBean) {
+		
+		MemberBean loginBean = dao.findByPk(memBean.getEmail());
+		if (loginBean!=null && loginBean.getPassword().equals(memBean.getPassword())) {
 			System.out.println("Login success from DAO");
 		} else {
+			loginBean = new MemberBean();
+			loginBean.setEmail("fail");
 			System.out.println("Login failed from DAO");
 		}
 		return loginBean;

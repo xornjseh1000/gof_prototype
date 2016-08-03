@@ -37,7 +37,7 @@ public class MemberController {
 				String[] arrTemp1 = temp1.split(",");
 				memBean.setEmail(arrTemp1[0]);
 				memBean.setPassword(arrTemp1[1]);
-				memBean.setRcvEmail(arrTemp1[2].equals("Y")?true:false);
+				memBean.setRcvEmail(true);
 				service.regist(memBean);
 				break;
 			case "2":
@@ -59,7 +59,7 @@ public class MemberController {
 				break;
 			case "4":
 				//Log In
-				service.login(JOptionPane.showInputDialog("Email: "), JOptionPane.showInputDialog("PW: "));
+				//service.login(JOptionPane.showInputDialog("Email: "), JOptionPane.showInputDialog("PW: "));
 				break;
 			case "5":
 				service.addBk(JOptionPane.showInputDialog("Email: "), Integer.parseInt(JOptionPane.showInputDialog("Serial No.: ")));

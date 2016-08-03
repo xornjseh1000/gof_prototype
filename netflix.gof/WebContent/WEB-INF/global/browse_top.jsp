@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8" />
-	<title>GoF</title>
-	<link rel="stylesheet" href="login.css" />
+	<title>Netflix</title>
+	<link rel="stylesheet" href="${css}/browse.css" />
 </head>
 <body>

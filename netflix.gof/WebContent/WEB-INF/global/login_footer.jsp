@@ -5,8 +5,8 @@
 		</a>
 	</p>
 	<ul>
-		<a href="qanda.jsp">자주 묻는 질문</a> 
-		<a href="help.jsp">고객 센터</a>
-		<a href="account.jsp">계 정</a>
+		<a href="${context}/customer.do?page=customer">자주 묻는 질문</a> 
+		<a href="${context}/customer.do?page=customer">고객 센터</a>
+		<a href="${context}/member.do?page=account">계 정</a>
 	</ul>
 </div>
