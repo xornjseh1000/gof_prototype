@@ -213,7 +213,6 @@ public class VideoDAO {
 				bigBean.setGpa(this.getGpa(bigBean.getSerialNo()));
 				bigBean.setActorList(this.getActorList(bigBean.getSerialNo()));
 				tempMap.put(bigBean.getSerialNo(), bigBean);
-				
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -358,12 +357,4 @@ public class VideoDAO {
 		return tempList;
 	}
 
-	public List<VideoBigBean> selectRecList(int[] genre) {
-		List<VideoBigBean> tempList = new ArrayList<VideoBigBean>();
-		return null;
-	}
-
-	
-
-	
 }

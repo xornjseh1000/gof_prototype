@@ -9,8 +9,11 @@ import java.util.Map;
 
 import actor.ActorBean;
 import actor.ActorDAO;
+import global.EpisodeAscSort;
+import global.GPADescSort;
 import global.Genre;
-import global.RegDateSort;
+import global.RegDateDescSort;
+import global.TitleAscSort;
 import member.MemberDAO;
 
 public class VideoServiceImpl implements VideoService{
@@ -38,7 +41,7 @@ public class VideoServiceImpl implements VideoService{
 	}
 	@Override
 	public List<?> findBy(String keyword) {
-		
+		// search로 대체..
 		return null;
 	}
 	@Override
@@ -48,10 +51,11 @@ public class VideoServiceImpl implements VideoService{
 		List<VideoBigBean> vList = null;
 		while(it.hasNext()){
 			VideoBigBean bigBean = map.get(it.next());
-			if(bigBean.getTitle().contains(keyword) || bigBean.getSubTitle().contains(keyword)){
+			if((bigBean.getTitle().contains(keyword) || bigBean.getSubTitle().contains(keyword)) && bigBean.getEpisode()==1){
 				vList = new ArrayList<VideoBigBean>();
 				vList.add(bigBean);
 				vMap.put(bigBean.getSerialNo(), vList);
+				
 			}
 		}
 		if(!vMap.isEmpty()){
@@ -69,7 +73,7 @@ public class VideoServiceImpl implements VideoService{
 				vList = new ArrayList<VideoBigBean>();
 				while(it.hasNext()){
 					VideoBigBean bigBean = this.map.get(it.next());
-					if(this.checkActorList(bigBean.getActorList(), actBean.getActorNo())){
+					if(this.checkActorList(bigBean.getActorList(), actBean.getActorNo()) && bigBean.getEpisode()==1){
 						vList.add(bigBean);
 					}
 				}
@@ -79,6 +83,7 @@ public class VideoServiceImpl implements VideoService{
  		if(!actMap.isEmpty()){
  			return actMap;
  		}
+ 		
  		int genre = this.checkGenre(keyword);
  		if(genre!=-1){
  			it = map.keySet().iterator();
@@ -86,7 +91,7 @@ public class VideoServiceImpl implements VideoService{
  			vList = new ArrayList<VideoBigBean>();
  			while(it.hasNext()){
  				VideoBigBean bigBean = map.get(it.next());
- 				if(bigBean.getGenre()==genre){
+ 				if(bigBean.getGenre()==genre && bigBean.getEpisode()==1){	
  					vList.add(bigBean);
  				}
  			}
@@ -109,20 +114,28 @@ public class VideoServiceImpl implements VideoService{
 	private int checkGenre(String keyword) {
 		int result = 0;
 		// ACTION,COMEDY,MELO,THRILLER,HORROR,SF;
-		if(keyword.equalsIgnoreCase("ACTION")){
+		switch (keyword.toUpperCase()) {
+		case "ACTION": case "액션":
 			result = Genre.ACTION.ordinal();
-		}else if(keyword.equalsIgnoreCase("COMEDY")){
+			break;
+		case "COMEDY": case "코메디":
 			result = Genre.COMEDY.ordinal();
-		}else if(keyword.equalsIgnoreCase("MELO")){
+			break;
+		case "MELO": case "멜로":
 			result = Genre.MELO.ordinal();
-		}else if(keyword.equalsIgnoreCase("THRILLER")){
+			break;
+		case "THRILLER": case "스릴러":
 			result = Genre.THRILLER.ordinal();
-		}else if(keyword.equalsIgnoreCase("HORROR")){
+			break;
+		case "HORROR": case "호러":
 			result = Genre.HORROR.ordinal();
-		}else if(keyword.equalsIgnoreCase("SF")){
+			break;
+		case "SF": case "판타지":
 			result = Genre.SF.ordinal();
-		}else{
+			break;
+		default:
 			result = -1;
+			break;
 		}
 		return result;
 	}
@@ -136,7 +149,10 @@ public class VideoServiceImpl implements VideoService{
 		List<VideoBigBean> list = new ArrayList<VideoBigBean>();
 		List<Integer> watchedList = vDao.selectStats(email);
 		for (Integer index : watchedList) {
-			list.add(map.get(index));
+			VideoBigBean bigBean = map.get(index);
+			if(bigBean.getEpisode()==1){
+				list.add(map.get(index));
+			}
 		}
 		return list;
 		
@@ -146,7 +162,10 @@ public class VideoServiceImpl implements VideoService{
 		List<VideoBigBean> list = new ArrayList<VideoBigBean>();
 		List<Integer> bMarkList = vDao.selectBookmark(email);
 		for (Integer index : bMarkList) {
-			list.add(map.get(index));
+			VideoBigBean bigBean = map.get(index);
+			if(bigBean.getEpisode()==1){
+				list.add(map.get(index));
+			}
 		}
 		return list;
 	}
@@ -155,7 +174,10 @@ public class VideoServiceImpl implements VideoService{
 		List<VideoBigBean> list = new ArrayList<VideoBigBean>();
 		List<Integer> hotList = vDao.selectHotList();
 		for (Integer index : hotList) {
-			list.add(map.get(index));
+			VideoBigBean bigBean = map.get(index);
+			if(bigBean.getEpisode()==1){
+				list.add(map.get(index));
+			}
 		}
 		return list;
 	}
@@ -163,18 +185,14 @@ public class VideoServiceImpl implements VideoService{
 	public List<VideoBigBean> newMovieList() {
 		List<VideoBigBean> list = this.list();
 		List<VideoBigBean> newList = new ArrayList<VideoBigBean>();
-		Collections.sort(list, new RegDateSort());
+		Collections.sort(list, new RegDateDescSort());
 		int i=0;
-		for(;i<2;i++){ // 최근 등록한 5개 영상만 보여줌 
+		for(;i<2;i++){ // 최근 등록한 2개 영상만 보여줌 
 			newList.add(list.get(i));
 		}
 		return newList;
 	}
-	@Override
-	public List<?> sort(String order) {
-		
-		return null;
-	}
+
 	@Override
 	public VideoBigBean detail(int serialNo) {
 		return map.get(serialNo);
@@ -218,14 +236,64 @@ public class VideoServiceImpl implements VideoService{
 		return result;
 	}
 	@Override
-	public List<?> recommendList(String email) {
+	public List<VideoBigBean> recommendList(String email) {
 		String[] favs = mDao.selectFav(email).split(":");
-		int[] ifavs = new int[favs.length];
-		for (int i : ifavs) {
-			ifavs[i] = Integer.parseInt(favs[i]);
+		int[] genres = new int[favs.length];
+		int i=0;
+		for(i=0 ; i < genres.length ; i++){
+			genres[i] = map.get(Integer.parseInt(favs[i])).getGenre();
 		}
-		List<VideoBigBean> list = vDao.selectRecList(ifavs);
-		return null;
+		List<VideoBigBean> vList = new ArrayList<VideoBigBean>();
+		Iterator<?> it = this.map.keySet().iterator();
+		int genre=0;
+		while (it.hasNext()) {
+			VideoBigBean bigBean = (VideoBigBean) map.get(it.next());
+			genre = bigBean.getGenre();
+			if(genre==genres[0]||genre==genres[1]||genre==genres[2]){
+				vList.add(bigBean);
+			}
+		}
+		return vList;
 	}
-	
+	@Override
+	public List<VideoBigBean> getSeries(int season,int groupNo) {
+		List<VideoBigBean> vList = new ArrayList<VideoBigBean>();
+		Iterator<?> it = this.map.keySet().iterator();
+		while (it.hasNext()) {
+			VideoBigBean bigBean = (VideoBigBean) map.get(it.next());
+			if(bigBean.getSeason() == season && bigBean.getGroupNo()==groupNo){
+				vList.add(bigBean);
+			}
+		}
+		Collections.sort(vList, new EpisodeAscSort());
+		
+		return vList;
+	}
+	@Override
+	public List<VideoBigBean> getCategoryList(int category) {
+		List<VideoBigBean> vList = new ArrayList<VideoBigBean>();
+		Iterator<?> it = this.map.keySet().iterator();
+		while (it.hasNext()) {
+			VideoBigBean bigBean = (VideoBigBean) map.get(it.next());
+			if(bigBean.getCategory() == category && bigBean.getEpisode()==1){
+				vList.add(bigBean);
+			}
+		}
+		return vList;
+	}
+	@Override
+	public List<VideoBigBean> sort(List<VideoBigBean> vList, String order) {
+		switch (order.toUpperCase()) {
+		case "GPA":
+			Collections.sort(vList, new GPADescSort());
+			break;
+		case "REGDATE":
+			Collections.sort(vList, new RegDateDescSort());
+			break;
+		default:
+			Collections.sort(vList, new TitleAscSort());
+			break;
+		}
+		return vList;
+	}
 }

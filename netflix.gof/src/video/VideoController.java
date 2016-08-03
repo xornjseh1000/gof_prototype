@@ -55,7 +55,7 @@ public class VideoController {
 				}
 				break;
 			case "4":
-				Map<?,?> map = vService.search("김");
+				Map<?,?> map = vService.search("THRILLER");
 				Iterator<?> it = map.keySet().iterator();
 				while(it.hasNext()){
 					int key = (int) it.next();
@@ -65,6 +65,7 @@ public class VideoController {
 						System.out.println(key + " : "+ list);
 					}
 				}
+				break;
 			case "5": //myBOokamrk
 				JOptionPane.showMessageDialog(null, vService.wishMovieList("2hwooo@naver.com"));
 				break;
@@ -79,6 +80,15 @@ public class VideoController {
 				break;
 			case "9":
 				JOptionPane.showMessageDialog(null, vService.detail(1010).getS​ynopsis());
+				break;
+			case "10":
+				JOptionPane.showMessageDialog(null, vService.recommendList("2hwooo@naver.com").size());
+				break;
+			case "11":
+				JOptionPane.showMessageDialog(null, vService.getSeries(1, 6));
+				break;
+			case "12":
+				JOptionPane.showMessageDialog(null, vService.getCategoryList(Category.MOVIE.ordinal()));
 				break;
 			default:
 				break;

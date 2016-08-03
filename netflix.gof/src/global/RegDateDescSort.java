@@ -1,13 +1,12 @@
 package global;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Comparator;
 import java.util.Date;
 
 import video.VideoBigBean;
 
-public class RegDateSort implements Comparator<VideoBigBean> {
+public class RegDateDescSort implements Comparator<VideoBigBean> {
 
 	@Override
 	public int compare(VideoBigBean first, VideoBigBean second) {
