@@ -8,5 +8,5 @@ package global;
 */
 
 public enum Genre {
-	ACTION,COMEDY,MELO,THRILLER,HORROR,SF;
+	ACTION,COMEDY,MELO,THRILLER,HORROR,SF,INFORM;
 }

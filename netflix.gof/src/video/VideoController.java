@@ -22,22 +22,22 @@ public class VideoController {
 			switch (JOptionPane.showInputDialog("1.")) {
 			case "1":
 				VideoBigBean regBean = new VideoBigBean();
-				regBean.setGrade(19);
+				regBean.setGrade(12);
 				regBean.setSeason(1);
-				regBean.setEpisode(2);
+				regBean.setEpisode(1);
 				regBean.setProducer_no(3);
-				regBean.setGenre(Genre.ACTION.ordinal());
-				regBean.setCategory(Category.MOVIE.ordinal());
-				regBean.setGroupNo(5);
-				regBean.setTitle("다크나이트 라이즈");
-				regBean.setSubTitle("THE DARK KNIGHT RISE");
-				regBean.setCreateYear("2012-07-20");
-				regBean.setS​ynopsis("다크 나이트에서 하비 덴트가 죽고 8년이 지나 하비의 살인자로 낙인찍힌 배트맨은 종적을 감추었고, 범죄집단에 가담한 범죄자들을 블랙 게이트란 수용소에 집어넣고 가석방은 절대 시켜주지 않는 『 하비 덴트 특별법 』에 의해 고담시의 범죄율을 급감해 평화로운 나날이 이어지고 있었다.");
-				regBean.setRunningTime("02:44:00");
-				regBean.setFile("https://youtu.be/lPSYDCRliFA");
+				regBean.setGenre(Genre.INFORM.ordinal());
+				regBean.setCategory(Category.DOCUMENTARY.ordinal());
+				regBean.setGroupNo(0);
+				regBean.setTitle("The Blue Planet");
+				regBean.setSubTitle("A Natural History of the Oceans");
+				regBean.setCreateYear("2011-03-13");
+				regBean.setS​ynopsis("우리에게 익숙한 바다, 비밀에 싸인 심해와 그곳에 사는 생물들까지 심도 있게 파헤치는 다큐멘터리. 데이비드 애튼버러가 해설을 맡았다.");
+				regBean.setRunningTime("00:48:00");
+				regBean.setFile("https://youtu.be/eH1s9GCqPKo");
 				regBean.setLanguage("영어");
-				regBean.setPoster("dardknightrise.jpg");
-				regBean.setActorList("1:8:9");
+				regBean.setPoster("blueplanet.jpg");
+				regBean.setActorList("5");
 				vService.insert(regBean);
 				break;
 			case "2":
@@ -85,15 +85,15 @@ public class VideoController {
 				JOptionPane.showMessageDialog(null, vService.recommendList("2hwooo@naver.com").size());
 				break;
 			case "11":
-				Map<Integer, List<VideoBigBean>> maps = (Map<Integer, List<VideoBigBean>>) vService.getSeries(5);
+				Map<Integer, List<VideoBigBean>> maps = (Map<Integer, List<VideoBigBean>>) vService.getSeries(21);
 				System.out.println(maps.size());
 				break;
 			case "12":
-				JOptionPane.showMessageDialog(null, vService.getCategoryList(Category.MOVIE.ordinal()));
+				JOptionPane.showMessageDialog(null, vService.getCategoryList(Category.DRAMA.ordinal()));
 				break;
 			case "13":
 				List<VideoBigBean> list = (List<VideoBigBean>) vService.list();
-				JOptionPane.showMessageDialog(null, vService.sort(list,"gpa"));
+				JOptionPane.showMessageDialog(null, vService.sort(list,""));
 				break;
 			default:
 				break;
