@@ -44,7 +44,24 @@ public class PaymentDAO {
 		}
 		return result;
 	}
-
+	public int update(MemberPaymentCard pcmBean) {
+		int result = 0;
+		String sql = "UPDATE MEMBER SET NAME=?,BIRTH=?,CARD_NUM=?,PHONE=?,GRADE=? WHERE EMAIL=?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, pcmBean.getName());
+			pstmt.setString(2, String.valueOf(pcmBean.getBirth()));
+			pstmt.setString(3, pcmBean.getCardNum());
+			pstmt.setString(4, pcmBean.getPhone());
+			pstmt.setInt(5, pcmBean.getGrade());
+			pstmt.setString(6, pcmBean.getEmail());
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
+	}
 	public int delete(int paySeq) {
 		int result = 0;
 		String sql = "DELETE FROM PAYMENT WHERE PAY_SEQ=?";
@@ -119,24 +136,7 @@ public class PaymentDAO {
 		return pBean;
 	}
 
-	public int update(MemberPaymentCard pcmBean) {
-		int result = 0;
-		String sql = "UPDATE MEMBER SET NAME=?,BIRTH=?,CARD_NUM=?,PHONE=?,GRADE=? WHERE EMAIL=?";
-		try {
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, pcmBean.getName());
-			pstmt.setString(2, String.valueOf(pcmBean.getBirth()));
-			pstmt.setString(3, pcmBean.getCardNum());
-			pstmt.setString(4, pcmBean.getPhone());
-			pstmt.setInt(5, pcmBean.getGrade());
-			pstmt.setString(6, pcmBean.getEmail());
-			result = pstmt.executeUpdate();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return result;
-	}
+
 
 	public List<PaymentBean> selectBy(String column, String word) {
 		List<PaymentBean> tempList = new ArrayList<PaymentBean>();

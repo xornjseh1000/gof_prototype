@@ -2,7 +2,7 @@ package payment;
 
 public class MemberPaymentCard {
 	private int paySeq,price,birth,grade;
-	private String email,cardNum,name,company,payDate,expireDate,phone;
+	private String email,cardNum,name,company,payDate,expireDate,phone,password;
 	
 	public int getPaySeq() {
 		return paySeq;
@@ -70,4 +70,11 @@ public class MemberPaymentCard {
 	public void setGrade(int grade) {
 		this.grade = grade;
 	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
 }

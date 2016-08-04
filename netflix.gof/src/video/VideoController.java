@@ -28,8 +28,8 @@ public class VideoController {
 				regBean.setProducer_no(3);
 				regBean.setGenre(Genre.INFORM.ordinal());
 				regBean.setCategory(Category.DOCUMENTARY.ordinal());
-				regBean.setGroupNo(0);
 				regBean.setTitle("The Blue Planet");
+				regBean.setGroupNo(0);
 				regBean.setSubTitle("A Natural History of the Oceans");
 				regBean.setCreateYear("2011-03-13");
 				regBean.setS​ynopsis("우리에게 익숙한 바다, 비밀에 싸인 심해와 그곳에 사는 생물들까지 심도 있게 파헤치는 다큐멘터리. 데이비드 애튼버러가 해설을 맡았다.");

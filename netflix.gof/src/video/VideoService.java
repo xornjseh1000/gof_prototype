@@ -29,6 +29,7 @@ public interface VideoService extends CommonService {
 	public Map<Integer,List<VideoBigBean>> getSeries(int groupNo);
 	public List<?> getCategoryList(int category);
 	public VideoBigBean detail(int serialNo);
-	public void playMovie(VideoBean mvBean);
+	public void playMovie(String email, int serialNo);
+	public int checkBookmark(String email, int serialNo);
 	
 }

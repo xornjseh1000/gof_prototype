@@ -78,6 +78,7 @@ public class MemberServiceImpl implements MemberService {
 	public int update(MemberPaymentCard pcmBean) {
 		int result = 0;
 		if (dao.update(pcmBean)==1) {
+			System.out.println("dao succ");
 			if(pDao.insert(pcmBean)==1){
 				System.out.println("Update success from DAO");
 				result = 1;

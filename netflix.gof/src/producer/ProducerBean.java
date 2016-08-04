@@ -1,6 +1,12 @@
 package producer;
 
-public class ProducerBean {
+import java.io.Serializable;
+
+public class ProducerBean implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int ProducerNo;
 	private String korName,engName,profileImg;
 	

@@ -1,7 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <div id="header">
-	<h3><a href="${context}/member.do?page=browse_main" style="color:red;">Netfilx </a>&nbsp; &nbsp;
-	<select name="menu" onchange="location = this.value;">
+	<form action="${context}/video.do?page=find_video&action=search" method="post">
+	<a href="${context}/member.do?action=browse_main" style="color:red;
+	  float: left; font-size: 25px; font-weight: bold;">Netfilx </a></h3>&nbsp; &nbsp;
+	<select name="menu" onchange="location = this.value;" style="float: left;
+	margin-top: 10px; margin-left: 10px">
 	 <option value="">메뉴</option>
      <option value="${context}/member.do?page=browse_main">홈</option>
      <option value="${context}/video.do?page=my_video">내 동영상 목록</option>
@@ -12,18 +15,19 @@
      switch("")
       MOVIE : 
       	Category.MOVIE.ordinal() -->
-	</select>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-		&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-	<form action="${context}/video.do?page=find_video&action=search" method="post">
-		<input type="text" name="keyword" placeholder="제목,사람,장르"/>
-		<input type="submit"  value="검색" />
-	</form>
-	<select name="profile" onchange="location = this.value;">
+	</select>
+	<select name="profile" onchange="location = this.value;"style="float: right; margin-top: 10px;
+	margin-right: 10px">
 		<option value="">${user.name}</option>
-     	<option value="${context}/member.do?page=account">계 정</option>
+     	<option value="${context}/member.do?page=account&action=account">계 정</option>
      	<option value="${context}/customer.do?page=customer">고객센터</option>
      	<option value="${context}/member.do?page=logout">GoF에서 로그아웃</option>
     </select>	
-	</h3> 
+		<input type="submit"  value="검색" style="float: right; margin-top: 10px; 
+		margin-right: 8px; margin-left:5px " />
+		<input type="text" name="keyword" placeholder="제목,사람,장르" style="float: right; 
+		margin-top: 10px;"/>
+	</form>
+	
 		
 </div>

@@ -4,9 +4,10 @@
 <jsp:include page="../global/browse_top.jsp" />
 <jsp:include page="../global/browse_header.jsp" /> 
 <div class="box">
-	<iframe width="560" height="315" src="${videourl }?autoplay=1" frameborder="0" allowfullscreen>
+	<h5> 
+		${keyword } 로 검색된 결과가 없습니다
+	</h5>
 	
-	</iframe><br>
-</div>
+	</div>	
 <jsp:include page="../global/browse_footer.jsp" />
 <jsp:include page="../global/browse_end.jsp" /> 

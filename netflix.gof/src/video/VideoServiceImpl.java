@@ -16,6 +16,7 @@ import global.Genre;
 import global.RegDateDescSort;
 import global.TitleAscSort;
 import member.MemberDAO;
+import sun.print.resources.serviceui;
 
 public class VideoServiceImpl implements VideoService{
 	private VideoDAO vDao = VideoDAO.getInstance();
@@ -102,7 +103,7 @@ public class VideoServiceImpl implements VideoService{
  			resultMap.put("genre", genreMap);
  			return resultMap;
  		}
- 		return null;
+ 		return resultMap;
 	}
 	public boolean checkActorList(String actorList,int actorNo){
 		boolean result = false;
@@ -136,6 +137,9 @@ public class VideoServiceImpl implements VideoService{
 			break;
 		case "SF": case "판타지":
 			result = Genre.SF.ordinal();
+			break;
+		case "INFORM": case "정보":
+			result = Genre.INFORM.ordinal();
 			break;
 		default:
 			result = -1;
@@ -202,9 +206,10 @@ public class VideoServiceImpl implements VideoService{
 		return map.get(serialNo);
 	}
 	@Override
-	public void playMovie(VideoBean mvBean) {
-		// TODO Auto-generated method stub
-		
+	public void playMovie(String email, int serialNo) {
+		if(vDao.checkStat(email,serialNo)==1){
+			vDao.insertStat(email,serialNo);
+		}
 	}
 	@Override
 	public int insert(VideoBigBean viBean) {
@@ -244,8 +249,10 @@ public class VideoServiceImpl implements VideoService{
 		String[] favs = mDao.selectFav(email).split(":");
 		int[] genres = new int[favs.length];
 		int i=0;
+	
 		for(i=0 ; i < genres.length ; i++){
 			genres[i] = map.get(Integer.parseInt(favs[i])).getGenre();
+			
 		}
 		List<VideoBigBean> vList = new ArrayList<VideoBigBean>();
 		Iterator<?> it = this.map.keySet().iterator();
@@ -257,6 +264,7 @@ public class VideoServiceImpl implements VideoService{
 				vList.add(bigBean);
 			}
 		}
+		System.out.println(vList.size());
 		return vList;
 	}
 	@Override
@@ -311,5 +319,10 @@ public class VideoServiceImpl implements VideoService{
 			break;
 		}
 		return vList;
+	}
+	@Override
+	public int checkBookmark(String email, int serialNo) {
+	
+		return vDao.selectBookmark(email,serialNo);
 	}
 }

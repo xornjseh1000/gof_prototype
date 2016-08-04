@@ -90,7 +90,8 @@ public class MemberDAO {
 
 	public int update(MemberPaymentCard pcmBean) {
         int result = 0;
-        String sql = "UPDATE MEMBER SET NAME=?,BIRTH=?,CARD_NUM=?,PHONE=?,GRADE=? WHERE EMAIL=?";
+        System.out.println("비밀번호 : "+pcmBean.getPassword());
+        String sql = "UPDATE MEMBER SET NAME=?,BIRTH=?,CARD_NUM=?,PHONE=?,GRADE=?,PASSWORD=? WHERE EMAIL=?";
         try {
             pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, pcmBean.getName());
@@ -98,7 +99,8 @@ public class MemberDAO {
             pstmt.setString(3, pcmBean.getCardNum());
             pstmt.setString(4, pcmBean.getPhone());
             pstmt.setInt(5, pcmBean.getGrade());
-            pstmt.setString(6, pcmBean.getEmail());
+            pstmt.setString(6, pcmBean.getPassword());
+            pstmt.setString(7, pcmBean.getEmail());
             result = pstmt.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
@@ -252,6 +254,7 @@ public class MemberDAO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 		return result;
 	}
 	
