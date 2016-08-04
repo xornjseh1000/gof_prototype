@@ -121,11 +121,13 @@ public class MemberController2 extends HttpServlet {
 			if(bean.getEmail().equals("fail")){
 				System.out.println("fail");
 				Separator.command.setPage("login");
+				Separator.command.setView();
+				DispatcherServlet.send(request,response,Separator.command);	
 			}else{
 				session.setAttribute("user", bean);
 				Separator.command.setPage("browse_main");
+				Separator.command.setView();
 			}
-			Separator.command.setView();
 			request.setAttribute("result", bean.getEmail().equals("fail")?"로그인실패":"");
 			
 			hotList = (List<VideoBigBean>) vService.hotMovieList();
@@ -150,7 +152,7 @@ public class MemberController2 extends HttpServlet {
 			}
 			DispatcherServlet.send(request,response,Separator.command);	
 			break;
-		case "acco_modify":
+		case "acc_modify":
 			bean = (MemberBean) session.getAttribute("user");
 			pcmBean = new MemberPaymentCard();
 			pcmBean.setEmail(bean.getEmail());
@@ -171,7 +173,7 @@ public class MemberController2 extends HttpServlet {
 			}else{
 				request.setAttribute("grade", "특별회원");				
 			}
-			int modifyResult = service.update(pcmBean);
+			int modifyResult = service.accupdate(pcmBean);
 			if(modifyResult == 0){
 				Separator.command.setPage("member_update");
 				Separator.command.setView();
@@ -179,7 +181,7 @@ public class MemberController2 extends HttpServlet {
 				bean.setName(pcmBean.getName());
 				bean.setEmail(pcmBean.getEmail());
 				bean.setPassword(pcmBean.getPassword());
-				bean.setPassword(pcmBean.getPhone());
+				bean.setPhone(pcmBean.getPhone());
 				bean.setCardNum(pcmBean.getCardNum());
 				session.setAttribute("user", bean);
 			}

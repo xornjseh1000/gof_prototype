@@ -35,12 +35,12 @@
 		<c:choose>
 			<c:when test="${flag==0}">
 				<tr>
-			  	  <td > <a href="${context}/video.do?action=detail&page=video_detail&serialNo=${video.serialNo}&bm=add">내 동영상 목록 추가</a></td>
+			  	  <td > <a href="${context}/video.do?action=detail&page=video_detail&serialNo=${video.serialNo}&bm=add">즐겨찾기 추가</a></td>
 				</tr>
 			</c:when>
 			<c:otherwise>
 				<tr>
-		  	  		<td > <a href="${context}/video.do?action=detail&page=video_detail&serialNo=${video.serialNo}&bm=rmv">내 동영상 목록 제거</a></td>
+		  	  		<td > <a href="${context}/video.do?action=detail&page=video_detail&serialNo=${video.serialNo}&bm=rmv">즐겨찾기 제거</a></td>
 				</tr>
 			</c:otherwise>
 		</c:choose>

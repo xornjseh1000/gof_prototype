@@ -13,7 +13,7 @@
 		</tr>
 		<tr>
 			<td >비밀번호</td>
-			<td><input type="text" name="pw" 
+			<td><input type="text" name="password" 
 					value="${user.password}"/></td>
 		</tr>
 		<tr>

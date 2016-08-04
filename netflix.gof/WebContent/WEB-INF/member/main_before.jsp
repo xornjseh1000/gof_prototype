@@ -43,19 +43,18 @@ h1 {
 		원하실 때 <br/>언제든지 해지하실 수 있습니다.
 	</article><br/>
 
-	<button type="button" color="red" onclick="alert('한달무료이용신청')" style="margin-left: 30px;">한달무표이용신청</button>
+	<button type="button" color="red" onclick="alert('회원가입 후 이용하세요.')" style="margin-left: 30px;">한달무표이용신청</button>
 	<p align="left"></p>
 
 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 <div id="footer" class="bottom">
 	<p>
-		<a  href="cuntecus.jsp">질문이 있으신가요? 고객 센터에 문의하세요
+		<a  href="${context}/customer.do?page=customer">질문이 있으신가요? 고객 센터에 문의하세요
 		</a>
 	</p>
 	<ul>
-		<a href="qanda.jsp">자주 묻는 질문</a> 
-		<a href="help.jsp">고객 센터</a>
-		<a href="account.jsp">계 정</a>
+		<a href="${context}/customer.do?page=customer">자주 묻는 질문</a> 
+		<a href="${context}/customer.do?page=customer">고객 센터</a>
 	</ul>
 </div>
 

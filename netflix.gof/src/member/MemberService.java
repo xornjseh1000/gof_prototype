@@ -15,6 +15,7 @@ public interface MemberService extends CommonService{
 	public int regist(MemberBean memBean);
 	public MemberBean login(MemberBean memBean);
 	public int update(MemberPaymentCard pcmBean);
+	public int accupdate(MemberPaymentCard pcmBean);
 	public int delete(MemberBean memBean);
 	public int addBk(String email,int serialNo);
 	public int delBk(String email,int serialNo);

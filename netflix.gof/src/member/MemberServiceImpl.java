@@ -88,7 +88,17 @@ public class MemberServiceImpl implements MemberService {
 		}
 		return result;
 	}
-
+	@Override
+	public int accupdate(MemberPaymentCard pcmBean) {
+		int result = 0;
+		if (dao.update(pcmBean)==1) {
+				System.out.println("Update success from DAO");
+				result = 1;
+		} else {
+			System.out.println("Update failed from DAO");
+		}
+		return result;
+	}
 	@Override
 	public int delete(MemberBean memBean) {
 		int result = 0;

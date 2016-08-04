@@ -6,10 +6,9 @@
 	<select name="menu" onchange="location = this.value;" style="float: left;
 	margin-top: 10px; margin-left: 10px">
 	 <option value="">메뉴</option>
-     <option value="${context}/member.do?page=browse_main">홈</option>
-     <option value="${context}/video.do?page=my_video">내 동영상 목록</option>
-     <option value="${context}/video.do?page=new_video">신규 동영상</option>
-     <option value="${context}/video.do?page=pop_video">인기 동영상</option>
+     <option value="${context}/video.do?page=my_video&action=myList">내 동영상 목록</option>
+     <option value="${context}/video.do?page=new_video&action=newList">신규 동영상</option>
+     <option value="${context}/video.do?page=pop_video&action=hotList">인기 동영상</option>
      <option value="${context}/video.do?page=category&category=1&action=category">영화</option>
 <!--      ?category=MOVIE
      switch("")

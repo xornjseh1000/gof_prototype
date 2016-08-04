@@ -41,6 +41,7 @@ public class VideoController2 extends HttpServlet {
 		ActorService actService = ActorServiceImpl.getInstance();
 		MemberService mService = MemberServiceImpl.getInstance();
 		ProducerService prdService = ProducerServiceImpl.getInstance();
+		MemberBean bean = new MemberBean();
 		switch (Separator.command.getAction()) {
 		case "move":
 			Separator.command.setDirectory("member");	
@@ -149,6 +150,24 @@ public class VideoController2 extends HttpServlet {
 			Separator.command.setView();
 			DispatcherServlet.send(request,response,Separator.command);			
 			break;
+		case "myList": 
+			bean = (MemberBean) session.getAttribute("user");
+			List<VideoBigBean> myList = (List<VideoBigBean>) vService.myMovieList(bean.getEmail());
+			request.setAttribute("mylist", myList);
+			DispatcherServlet.send(request,response,Separator.command);		
+		break;	
+		case "hotList": 
+			bean = (MemberBean) session.getAttribute("user");
+			List<VideoBigBean> hotList = (List<VideoBigBean>) vService.hotMovieList();
+			request.setAttribute("hotlist", hotList);
+			DispatcherServlet.send(request,response,Separator.command);		
+		break;	
+		case "newList": 
+			bean = (MemberBean) session.getAttribute("user");
+			List<VideoBigBean> newList = (List<VideoBigBean>) vService.newMovieList();
+			request.setAttribute("newlist", newList);
+			DispatcherServlet.send(request,response,Separator.command);		
+		break;	
 		default:
 			break;
 		}
