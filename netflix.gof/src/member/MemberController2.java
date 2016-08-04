@@ -143,6 +143,10 @@ public class MemberController2 extends HttpServlet {
 			request.setAttribute("wishlist", wishList);
 			DispatcherServlet.send(request,response,Separator.command);		
 			break;
+		case "logout":
+			session.setAttribute("user", "");
+			DispatcherServlet.send(request,response,Separator.command);		
+			break;
 		case "account":
 			bean = (MemberBean) session.getAttribute("user");
 			if(bean.getGrade()==1){
@@ -194,6 +198,16 @@ public class MemberController2 extends HttpServlet {
 				request.setAttribute("grade", "일반회원");
 			}else{
 				request.setAttribute("grade", "특별회원");				
+			}
+			DispatcherServlet.send(request,response,Separator.command);	
+			break;
+		case "customer":
+			bean = null;
+			bean = (MemberBean) session.getAttribute("user");
+			if(bean != null){
+				request.setAttribute("state", 1);
+			}else{
+				request.setAttribute("state", 2);				
 			}
 			DispatcherServlet.send(request,response,Separator.command);	
 			break;

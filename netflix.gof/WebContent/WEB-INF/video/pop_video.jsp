@@ -7,11 +7,9 @@
 		<h3>GoF 인기동영상 </h3>
 		<table id="pop_video">
 		<tr>
-			<td ><a href="${context}/video.do?page=video_detail"><img src="${img}/brakingbad.jpg" alt="브레킹베드" style="width:240px;height:150px;"></a></td>
-			<td ><a href="${context}/video.do?page=video_detail"><img src="${img}/dexter.jpg" alt="덱스터" style="width:240px;height:150px;"></a></td>
-			<td ><a href="${context}/video.do?page=video_detail"><img src="${img}/hungu.jpg" alt="헝거게임" style="width:240px;height:150px;"></a></td>
-			<td ><a href="${context}/video.do?page=video_detail"><img src="${img}/houseof.jpg" alt="하우스오브카드" style="width:240px;height:150px;"></a></td>
-			<td ><a href="${context}/video.do?page=video_detail"><img src="${img}/kimyhan.jpg" alt="기묘한이야기" style="width:240px;height:150px;"></a></td>
+		<c:forEach var="video" items="${hotlist}">
+			<td ><a href="${context}/video.do?action=detail&page=video_detail&serialNo=${video.serialNo}"><img src="${img}/${video.poster}" alt="${video.title}" style="width:240px;height:150px;"></a></td>
+		</c:forEach>
 		</tr>
 		</table>
 	</div>	

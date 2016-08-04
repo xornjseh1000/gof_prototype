@@ -7,11 +7,9 @@
 		<h3>신규 동영상 </h3>
 		<table id="new_video">
 		<tr>
-			<td ><a href="${context}/video.do?page=video_detail"><img src="${img}/agassy.jpg" alt="아가씨" style="width:240px;height:150px;"></a></td>
-			<td ><a href="${context}/video.do?page=video_detail"><img src="${img}/goksung.jpg" alt="곡성" style="width:240px;height:150px;"></a></td>
-			<td ><a href="${context}/video.do?page=video_detail"><img src="${img}/independenceday.jpg" alt="인디펜더스데이" style="width:240px;height:150px;"></a></td>
-			<td ><a href="${context}/video.do?page=video_detail"><img src="${img}/nosecuret.jpg" alt="비밀은없다" style="width:240px;height:150px;"></a></td>
-			<td ><a href="${context}/video.do?page=video_detail"><img src="${img}/tric.jpg" alt="트릭" style="width:240px;height:150px;"></a></td>
+		<c:forEach var="video" items="${newlist}">
+			<td ><a href="${context}/video.do?action=detail&page=video_detail&serialNo=${video.serialNo}"><img src="${img}/${video.poster}" alt="${video.title}" style="width:240px;height:150px;"></a></td>
+		</c:forEach>
 		</tr>
 		</table>
 	</div>	

@@ -20,7 +20,7 @@
 		<option value="">${user.name}</option>
      	<option value="${context}/member.do?page=account&action=account">계 정</option>
      	<option value="${context}/customer.do?page=customer">고객센터</option>
-     	<option value="${context}/member.do?page=logout">GoF에서 로그아웃</option>
+     	<option value="${context}/member.do?page=logout&action=logout">로그아웃</option>
     </select>	
 		<input type="submit"  value="검색" style="float: right; margin-top: 10px; 
 		margin-right: 8px; margin-left:5px " />

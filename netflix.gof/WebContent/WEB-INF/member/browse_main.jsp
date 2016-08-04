@@ -4,7 +4,7 @@
 <jsp:include page="../global/browse_top.jsp" />
 <jsp:include page="../global/browse_header.jsp" /> 
 <div class="box">
-		<c:if test="myList.Size()>0">
+		<c:if test="${mylist.size()>0}">
 		<h3>내 동영상목록 </h3>
 		<table id="my_video">
 		<tr>
@@ -14,7 +14,7 @@
 		</tr>
 		</table>
 		</c:if>
-		<c:if test="wishlist.Size()>0">
+		<c:if test="${wishlist.size()>0}">
 		<h3>즐겨찾기 목록 </h3>
 		<table id="my_video">
 		<tr>
