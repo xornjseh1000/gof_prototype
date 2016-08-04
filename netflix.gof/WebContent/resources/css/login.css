@@ -1,0 +1,41 @@
+@CHARSET "UTF-8";
+div.box{background-color:#ffffff;
+    color:#000000;
+    height: 100%;
+    width : 100%;
+    text-align:left; 
+    padding-top:10px;
+    }
+#header {
+    background-color:black;
+    color:#ff0000;
+    text-align:left;
+    padding:2px;
+}
+#section {
+	background-color:#0000ff;
+    color:#000000;
+    height: 580px;
+    width : 100%;
+    text-align:left; 
+    float:left;
+    padding:2px;
+}
+#footer {
+    background-color:white;
+    color:#999;
+    clear:both;
+    text-align:left;
+}
+#browsefooter {
+    background-color:#000000;
+    color:#999;
+    clear:both;
+    text-align:left;
+}
+.bottom {
+	position: relative;
+	bottom: 0;
+	width: 100%;
+	height: 70px;
+}
