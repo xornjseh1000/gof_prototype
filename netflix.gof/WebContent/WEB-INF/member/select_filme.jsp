@@ -13,7 +13,7 @@
 	<br />
 	<br />
 	
-	<span>선호하시는 영화나TV프로그램을 3개선택하세요</span>
+	<span>선호하시는 영화나TV프로그램을 3개선택하세요.</span>
 		<br /><br />
 		<form action="${context}/member.do" method="get">
 				<input type="hidden" name = "action" value="regist_complete"/>

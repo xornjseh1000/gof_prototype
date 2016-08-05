@@ -16,6 +16,9 @@ import global.DispatcherServlet;
 import global.ParamMap;
 import global.Separator;
 import payment.MemberPaymentCard;
+import payment.PaymentBean;
+import payment.PaymentService;
+import payment.PaymentServiceImpl;
 import video.VideoBigBean;
 import video.VideoService;
 import video.VideoServiceImpl;
@@ -33,6 +36,7 @@ public class MemberController2 extends HttpServlet {
 		HttpSession session = request.getSession();
 		MemberService service = MemberServiceImpl.getInstance();
 		VideoService vService = VideoServiceImpl.getInstance();
+		PaymentService pService = PaymentServiceImpl.getInstance();
 		MemberBean bean = new MemberBean();
 		MemberPaymentCard pcmBean = new MemberPaymentCard();
 		switch (Separator.command.getAction()) {
@@ -210,6 +214,13 @@ public class MemberController2 extends HttpServlet {
 				request.setAttribute("state", 2);				
 			}
 			DispatcherServlet.send(request,response,Separator.command);	
+			break;
+		case "payDetail":
+			MemberBean memBean = (MemberBean) session.getAttribute("user");
+			List<PaymentBean> paylist = (List<PaymentBean>) pService.findBy("card_num:"+memBean.getCardNum());
+			request.setAttribute("paylist", paylist);		
+			
+			DispatcherServlet.send(request,response,Separator.command);
 			break;
 		default:
 			break;

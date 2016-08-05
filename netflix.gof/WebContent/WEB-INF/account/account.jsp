@@ -3,6 +3,7 @@
 <link rel="stylesheet" href="browse_table.css" />
 <jsp:include page="../global/browse_top.jsp" />
 <jsp:include page="../global/browse_header.jsp" /> 
+
 <div id="box">
 		<h2>계정 <input type="submit" onclick=" location='member_update.jsp'" value="회원정보변경" /></h2>
 		<table id="member_detail">

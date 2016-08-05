@@ -28,7 +28,7 @@
 		</tr>
 		<tr>
 			<td>결제상세</td>
-			<td><input type="submit" onclick=" location='${context}/member.do?page=payment_list'" value="결제상세정보" /></td>
+			<td><input type="submit" onclick=" location='${context}/member.do?action=payDetail&page=payment_list'" value="결제상세정보" /></td>
 		</tr>
 		<tr>
 			<td >서비스상세정보</td>
